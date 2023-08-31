@@ -1,8 +1,21 @@
 ## Instructions
 
-#### Installing Node
+### Installing Node and npm
 
-There are several way to install node.js which is required to run react. We recommend using Node Version Manager (NVM), which includes installation for several different machines:
+There are several ways to install node.js which is required to run react.
+
+The easiest way is to simply install node from the website:
+
+https://nodejs.org/en/download
+
+During the node installation, npm will be fetched as well. 
+
+Verify the installations using node -v and npm -v in the terminal. If any of the verification steps gives you a command not found error, you most likely don't have the binary path to the library on your PATH variable (check Environmental Variables on windows). Related to this point, tools like NodeJS or git also provide their own shell (terminal) but you can use everything from your normal terminal; just make sure that your PATH is configured correctly.
+
+For the next steps, please consult the homework handout.
+
+##### If you are using ubuntu, try also Node Version Manager
+We recommend using Node Version Manager (NVM), if you are using ubuntu:
 
 https://github.com/nvm-sh/nvm
 
@@ -10,33 +23,25 @@ https://github.com/nvm-sh/nvm
 
  > nvm install 14.15.4
 
- #### Creating a new react app from scratch
 
- Several other methods of starting apps are available at the react website for different frameworks: https://react.dev/learn/start-a-new-react-project. We will use create-react-app as it is the simplest and we assume you have node.
+### Fork the Hw01 support code repository or download the .zip
 
- in the command line, install a directory with create-react-app "project name"
+If you are familiar with Github, then fork this repository and proceed to your copy of the subfolders in the repository. Otherwise, just download the zip with all the files.
 
- > create-react-app hw2
+For this assignment, you will only need to work (i.e., edit) the following files: 
+src/App.js, src/Blackhat.js, src/Blackhatstats.js, src/Whitehat.js and src/Whitehatstats.js.
 
- In the the new app folder, use npm to install d3 for react:
+In your unzipped folder, run
+> npm install
 
-> cd hw2
-
-> npm install d3
-
-for homework 3, also install three.js for react
-
-> npm install three
-
-From the src folder, copy App.js, App.css, BlackHat.js, WhiteHat.js, BlackHatStats.js, and WhiteHatStats.js into the /src/ folder. Overwrite the existing app.js and app.css
-
-Move the data files processed_gun_deaths.json (for the data to visualize) and us-states.geojson (for the map of the US) into the /public folder. This is the default location the code looks when loading files. Other maps can be downloaded at: https://github.com/topojson/us-atlas
-
-Test the program
+then test the result of the support code like this:
 
 > npm start
 
-#### Downloading the project from Github
+If all goes well, it will automatically open a browser view to localhost:3000 (or similar) and show you the result of the support code.
+
+
+### If you just pull from Gitub (instead of downloading the zip as above): Pulling the project from Github
 
 clone the github repo :
 
@@ -52,6 +57,49 @@ Test the program
 >npm start
 
 The code should launch a window in your browser showing a data visualization
+
+
+### Editing the Files
+
+To make your later development easier, and to help wih your final project, the Hw01 code is embedded as a React app. You don't need to worry about React at this point. If you're curious, React is a free, open-source javascript UI (User Interface) library developed by Facebook/Meta. If for later assignments or for your final project you'd like to change the structure of the webpage being shown (more than two views, or differently sized views etc.), then you'd work with React and JSX, which stands for JavaScript XML. JSX makes it easier to write and add HTML in React.
+
+In the src folder, you shoud see the following files:
+
+* App.js is our top-level app which imports the other apps. This file includes the state variables for the interface, the code for loading in the data, and the JSX for laying out the data based on the filters selected. Any changes to the layout or data would go in this file.
+
+* App.css contains the css for the code. For this example code, most of the formatting is done directly in jsx. Some of the formatting is also done in css, and this is the location of that formatting code. css is an alernative to make the code cleaner.
+
+* Blackhat.js is code for the Map when the "viewToggle" variable is set to 'blackhat'.
+
+* BlackhatStats.js is the code for the dummy chart below the map when the "viewToggle" variable is set to 'blackhat'. Edit this to change it so something useful.
+
+* Whitehat.js is code for the Map when the "viewToggle" variable is set to 'whitehat'.
+
+* WhitehatStats.js is the code for the histogram when the "viewToggle" variable is set to 'whitehat'.
+
+* D3Component.js is a template code for making a new D3 visualization. You don't need to worry about this file at this point, although it will be useful for your final project.
+
+* useSVGCanvas.js is a helper hook used in the d3 components that makes an svg that is sized to the parent container, gets a tooltip div (or makes one), and returns the constants "svg, height, width, tTip" for use in the component. This hook updates when the window resizes so your d3 visualizations will update if you use responsive layouts. You don't need to worry about this file.
+
+In the public folder, where the code looks for files by default:
+
+* us-states.geojson is the file with the map of the states in the geojson standard which is used by the application
+* processed_gundeaths_data.json is the processed gun data used in the application
+
+You don't need to worry about these files at this point, but it will be useful to understand what the data is structured like inside these files when you start creating your own white hat solution.
+
+In the python folder:
+
+* Preprocessing.ipynb is a jupyter notebook with the code used to process the example data
+* SlateGunDeaths.csv is the original data
+* state_populations.csv is a file with state populations from 2014
+* states-10m.json is a file with the us states similar to us-statse.geojson
+
+You don't need to worry about these files.
+
+From this point on, please use the homework handout to figure out what you need to do.
+
+### For Extra-Credit
 
 #### Creating a new D3 Visualization
 
@@ -112,33 +160,214 @@ return (
 ) 
 ~~~
 
-### Preprocessing data
+#### Preprocessing data to generate new information
 
 We provide an example of processed code in the form of processed_gundeaths_data.json, as well as the original code SlateGunDeath.csv and slate_populations.csv
 
-If you want to preprocess data in the future, we use python with the pandas library for data processing and jupyter notebooks for running the code.
+The preprocessing used to create our example data can be found in python/Preprocessing.ipynb as a jupyter notbook. For EC, you could preprocess the data to generate new information, for example to add per-state voting information or information about the leniency of per-state gun legislatures.
 
-Python 3 is on most machines. Instructions for downloading can be found here:
-https://wiki.python.org/moin/BeginnersGuide/Download
+#### Loading New Data
 
-Pandas is a data processing library. The easiest method is through installing anaconda
+New data is loaded into the project using asyncronous hooks. To accomplish this, first, write a new function for calling the preprocessed data. First, we recommend putting the data as part of the App state using react's 'useState':
+
+~~~text
+function App() {
+  const [data,setData] = useState();
+~~~
+
+This makes a variable called "data" that is initially undefined. This is why the D3Component code includes a catch that checks that the data isn't undefined
+
+~~~text
+useEffect(()=>{
+        if(svg !== undefined & props.data !== undefined){
+            //put code here
+            console.log('here',props.data,height,width);
+        }
+    },[svg,props.data]);
+~~~
+
+The variable can be changed using
+
+> setData(newdata)
+
+The data needs to be loaded asyncronously. If the data is in a json form, use something like
+
+~~~text
+async function fetchData(){
+    fetch('data.json').then(paths=>{
+        paths.json().then(newData=>{
+            //do any processing of the data here
+            setData(newData)
+        })
+    })
+}
+~~~
+
+for CSV files, we need to use a slightly different code. d3 proves CSV processing
+
+~~~text 
+import * as d3 from 'd3';
+
+...
+
+async function fetchCSV(){
+    d3.csv('data.csv').then(d=>{
+        setData(d);
+    })
+}
+~~~
+
+The calls for "then()" are because fetch and d3.csv return promises. You can read more about those here:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+The easiest way to load the data in the app is then to wrap all your data loading functions in a hook like this:
+
+~~~text
+//fetch data, called only once
+  useEffect(()=>{
+    fetchData();
+    fetchCSV(); 
+  },[])
+~~~
+
+The '[]' argument passed to useEffect lists the props to listen to for an update to the hook. By passing an empty array we only call the function once at the start of the rendering. If we wanted to reload the data after a variable change that is used in the data query, we would change it to:
+
+~~~text
+useEffect(()=>{
+    fetchDataWithParameters(param);
+},[param]);
+~~~
+
+#### Additional Tooltips via other libraries
+
+Our example code uses a ToolTip class (see below). There are several other ways to achieve tooltips in javascript. Some premade options are
+ 
+ * tipsy: https://github.com/CreativeDream/jquery.tipsy
+ * react tooltip: https://react-tooltip.com/docs/getting-started
+ * Material UI library: https://mui.com/material-ui/react-tooltip/
+
+Because react and d3 use different paradigms, we provide some premade code intended to make tooltip calls easier that don't use non-react libraries. We simple include the code for a tooltip class: 
+
+~~~text
+class ToolTip {
+  static moveTTip(tTip, tipX, tipY){
+    var tipBBox = tTip.node().getBoundingClientRect();
+    while(tipBBox.width + tipX > window.innerWidth){
+        tipX = tipX - 10 ;
+    }
+    while(tipBBox.height + tipY > window.innerHeight){
+        tipY = tipY - 10 ;
+    }
+    tTip.style('left', tipX + 'px')
+        .style('top', tipY + 'px')
+        .style('visibility', 'visible')
+        .style('z-index', 1000);
+  }
+
+  static moveTTipEvent(tTip, event){
+      var tipX = event.pageX + 30;
+      var tipY = event.pageY -20;
+      this.moveTTip(tTip,tipX,tipY);
+  }
 
 
-Pandas standalone can be install using the command
+  static hideTTip(tTip){
+      tTip.style('visibility', 'hidden')
+  }
 
-> pip install pandas
+  static addTTipCanvas(tTip, className, width, height){
+      tTip.selectAll('svg').selectAll('.'+className).remove();
+      let canvas = tTip.append('svg').attr('class',className)
+          .attr('height',height).attr('width',width)
+          .style('background','white');
+      return canvas
+  }
+}
+~~~
 
-if you have machine specific issues, see this page:
+This includes premade calls designed to go inside javascript event calls. We also need a div selection with certain css properties to make the position work. add this code into App.css.
 
-https://pandas.pydata.org/docs/getting_started/install.html
+~~~text
+.tooltip {	
+  position: absolute;
+  z-index: 10;
+  opacity: 1!important;			
+  text-align: center;			
+  width: auto;		
+  max-width: 50vw;			
+  height: auto;					
+  padding: 10px;				
+  font: 12px sans-serif;		
+  background: rgb(172, 173, 173);	
+  border: 0px;		
+  border-radius: 8px;			
+  pointer-events: none;	
+  font-size: .7em!important;		
+}
+~~~
 
-Jupyter notebooks can be installed by running
+This styling can be altered, but the important part is "position: absolute".
 
-> pip install jupyterlab
+Our example code for a D3 component already gives you the selection for a div with the tooltip class with the name "tTip".
 
-Which installs jupyterlab. Classic Jupyter notebook, which is somewhat more lightweight, can be installed with:
+For example, if we have code to draw a series of circles, we can add a tooltip call as such:
 
-> pip install notebook
+~~~text
+le tTip = d3.select('.tooltip')//we need a selection for the tooltip item 
+svg.selectAll('circle')
+    .data(props.data).enter()
+    .append('circle')
+    .attr('cx',getX)
+    .attr('cy',getY)
+    .attr('r',getRadius)
+    .on('mouseover',(e,d)=>{
+        //e is the "event" for javascript
+        //d is the data item associated with props.data
 
-The preprocessing used to create our example data can be found in python/Preprocessing.ipynb as a jupyter notbook.
+        //get the text to put in to the tooltip
+        let string = getToolTipText(d);
+        tTip.html(string);
+        //move 
+        ToolTip.moveTTipEvent(tTip,e);
+    }).on('mousemove',(e)=>{
+        //moves the tooltip relative to your mouse
+        ToolTip.moveTTipEvent(tTip,e);
+    }).on('mouseout',(e,d)=>{
+        //hide the tooltip once the mouse stops hovering over the circle
+        ToolTip.hideTTip(tTip);
+    });
+~~~
+
+This can be altered if you want different tooltip behaviour, such as moving the tooltip to a fixed location rather than relative to the mouse using ToolTip.moveTTip.
+
+Also, our example code passes the ToolTip class as a prop, so in the D3Component example code, you would use 
+
+> props.ToolTip.moveTTip...
+
+etc
+
+#### Experimenting with Brushing in D3 and react
+
+By default, the easiest way to deal with d3 is to just remove everything and then redraw it whenever we update the data, which will likely work for all our data
+
+~~~text
+useEffect(()=>{
+        if(svg !== undefined & props.data !== undefined){
+            svg.selectAll().remove()
+            svg.selectAll('circle').data(props.data)
+                .enter().append('circle')
+                ...
+        }
+    },[svg,props.data]);
+~~~
+
+However, if we want to only select certain features to update according to the  state of the app (such as with brushing), there are a few steps we need to do.
+
+First, we want a feature to track what is being tracked in App.js to link across different views:
+
+~~~text
+const [brushState,setBrushState] = useState();
+~~~
+
+.. todo
 
