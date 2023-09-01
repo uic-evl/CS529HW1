@@ -94,7 +94,7 @@ export default function WhiteHatStats(props){
             .attr('stroke','black')
             .attr('fill','none');
 
-        //add a title
+        //change the title
         const labelSize = margin/2;
         svg.selectAll('text').remove();
         svg.append('text')
@@ -105,7 +105,7 @@ export default function WhiteHatStats(props){
             .attr('font-weight','bold')
             .text('How Hard it Is To Draw Each State Vs Gun Deaths');
 
-        //add a disclaimer so we are immune to defamation lawsuits
+        //change the disclaimer here
         svg.append('text')
             .attr('x',width-20)
             .attr('y',height/3)
