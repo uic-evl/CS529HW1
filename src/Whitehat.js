@@ -133,7 +133,7 @@ export default function Whitehat(props){
                 .attr('opacity',.5);                
 
             
-            // //draw a color legend, automatically scaled based on data extents
+            //draw a color legend, automatically scaled based on data extents
             function drawLegend(){
                 let bounds = mapGroup.node().getBBox();
                 const barHeight = Math.min(height/10,40);
