@@ -10,6 +10,8 @@ export default function Whitehat(props){
     //this will automatically resize when the window changes so passing svg to a useeffect will re-trigger
     const [svg, height, width, tTip] = useSVGCanvas(d3Container);
     var isZoomed = false;
+
+    //TODO: change the line below to change the size of the white-hat maximum bubble size
     const maxRadius = width/100;
 
     //albers usa projection puts alaska in the corner
@@ -28,7 +30,7 @@ export default function Whitehat(props){
 
 
     //This is the main loop that renders the code once the data loads
-    //EDIT THE MAP HERE
+    //TODO: edit or replace this code to create your white-hat version of the map view; for example, change the color map based on colorbrewer2, 
     const mapGroupSelection = useMemo(()=>{
         //wait until the svg is rendered and data is loaded
         if(svg !== undefined & props.map !== undefined & props.data !== undefined){
@@ -51,7 +53,7 @@ export default function Whitehat(props){
                 .domain([stateMin,stateMax])
                 .range([1,0]);
 
-            //EDIT HERE TO CHANGE THE COLOR SCHEME
+            //TODO: EDIT HERE TO CHANGE THE COLOR SCHEME
             //this function takes a number 0-1 and returns a color
             const colorMap = d3.interpolateRdYlGn;
 
@@ -78,7 +80,7 @@ export default function Whitehat(props){
             //clear earlier drawings
             svg.selectAll('g').remove();
 
-            //EDIT THIS TO CHANGE THE DETAILS OF HOW THE MAP IS DRAWN
+            //OPTIONAL: EDIT THIS TO CHANGE THE DETAILS OF HOW THE MAP IS DRAWN
             //draw borders from map and add tooltip
             let mapGroup = svg.append('g').attr('class','mapbox');
             mapGroup.selectAll('path').filter('.state')
@@ -110,7 +112,7 @@ export default function Whitehat(props){
                 });
 
 
-            //EDIT CODE HERE TO CHANGE THE MARKERS USED FOR THE CITIES
+            //TODO: replace or edit the code below to change the city marker being used. Hint: think of the cityScale range (perhaps use area rather than radius). 
             //draw markers for each city
             const cityData = props.data.cities
             const cityMax = d3.max(cityData.map(d=>d.count));
@@ -120,6 +122,7 @@ export default function Whitehat(props){
 
             mapGroup.selectAll('.city').remove();
 
+            //OPTIONAL: change the color or opacity
             mapGroup.selectAll('.city')
                 .data(cityData).enter()
                 .append('circle').attr('class','city')
@@ -129,7 +132,7 @@ export default function Whitehat(props){
                 .attr('r',d=>cityScale(d.count))
                 .attr('opacity',.5);                
 
-            //EDIT THE COLOR LEGEND HERE
+            
             // //draw a color legend, automatically scaled based on data extents
             function drawLegend(){
                 let bounds = mapGroup.node().getBBox();
@@ -141,7 +144,7 @@ export default function Whitehat(props){
                 let legendY = bounds.y + 2*fontHeight;
                 
                 let colorLData = [];
-                //EDIT THE VALUES IN THE ARRAY TO CHANGE THE NUMBER OF ITEMS IN THE COLOR LEGEND
+                //OPTIONAL: EDIT THE VALUES IN THE ARRAY TO CHANGE THE NUMBER OF ITEMS IN THE COLOR LEGEND
                 for(let ratio of [0.1,.2,.3,.4,.5,.6,.7,.8,.9,.99]){
                     let val = (1-ratio)*stateMin + ratio*stateMax;
                     let scaledVal = stateScale(val);
@@ -205,8 +208,8 @@ export default function Whitehat(props){
         const zoom = d3.zoom()
             .on("zoom", zoomed);
 
-        //EDIT THIS TO CHANGE WHAT HAPPENS WHEN YOU CLICK A STATE
-        //useful if you want to add pbrushing
+        //OPTIONAL: EDIT THIS CODE TO CHANGE WHAT HAPPENS WHEN YOU CLICK A STATE
+        //useful if you want to add brushing
         function clicked(event, d) {
             event.stopPropagation();
             if(isZoomed){
@@ -247,7 +250,7 @@ export default function Whitehat(props){
 
     },[mapGroupSelection]);
 
-    //EDIT HERE TO CHANGE THE BRUSHING BEHAVIOUR IN THE MAP WHEN MOUSING OVER A STATE
+    //OPTIONAL: EDIT HERE TO CHANGE THE BRUSHING BEHAVIOUR IN THE MAP WHEN MOUSING OVER A STATE
     //WILL UPDATE WHEN THE "BRUSHEDSTATE" VARIABLE CHANGES
     //brush the state by altering it's opacity when the property changes
     //brushed state can be on the same level but that makes it harder to use in linked views
