@@ -45,10 +45,10 @@ If all goes well, it will automatically open a browser view to localhost:3000 (o
 
 clone the github repo :
 
-> git clone https://github.com/tehwentzel/CS529HW2.git
+> git clone https://github.com/tehwentzel/CS529HW1.git
 
 Install the required npm packages:
-> cd CS529HW2
+> cd CS529HW1
 
 > npm install
 
