@@ -2,7 +2,7 @@ import React, {useRef,useMemo} from 'react';
 import useSVGCanvas from './useSVGCanvas.js';
 import * as d3 from 'd3';
 
-export default function Blackhat(props){
+export default function Whitehat(props){
     //this is a generic component for plotting a d3 plot
     const d3Container = useRef(null);
     //this automatically constructs an svg canvas the size of the parent container (height and width)
@@ -78,6 +78,7 @@ export default function Blackhat(props){
             //clear earlier drawings
             svg.selectAll('g').remove();
 
+            //EDIT THIS TO CHANGE THE DETAILS OF HOW THE MAP IS DRAWN
             //draw borders from map and add tooltip
             let mapGroup = svg.append('g').attr('class','mapbox');
             mapGroup.selectAll('path').filter('.state')
@@ -205,6 +206,7 @@ export default function Blackhat(props){
             .on("zoom", zoomed);
 
         //EDIT THIS TO CHANGE WHAT HAPPENS WHEN YOU CLICK A STATE
+        //useful if you want to add pbrushing
         function clicked(event, d) {
             event.stopPropagation();
             if(isZoomed){
@@ -228,6 +230,7 @@ export default function Blackhat(props){
                     d3.pointer(event, svg.node())
                 );
             }
+            //sets the zoomed state property in the main app when we click on something
             //if we are zoomed in, unzoom instead
             isZoomed = !isZoomed;
             if(isZoomed){

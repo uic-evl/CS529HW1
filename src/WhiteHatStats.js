@@ -2,7 +2,7 @@ import React, {useEffect, useRef,useMemo} from 'react';
 import useSVGCanvas from './useSVGCanvas.js';
 import * as d3 from 'd3';
 
-export default function BlackHatStats(props){
+export default function WhiteHatStats(props){
     //this is a generic component for plotting a d3 plot
     const d3Container = useRef(null);
     //this automatically constructs an svg canvas the size of the parent container (height and width)
