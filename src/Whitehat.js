@@ -122,6 +122,7 @@ export default function Whitehat(props){
 
             mapGroup.selectAll('.city').remove();
 
+            //TODO: Add code for a tooltip when you mouse over the city (hint: use the same code for the state tooltip events .on... and modify what is used for the tTip.html)
             //OPTIONAL: change the color or opacity
             mapGroup.selectAll('.city')
                 .data(cityData).enter()
