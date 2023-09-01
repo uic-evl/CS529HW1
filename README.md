@@ -15,7 +15,7 @@ Verify the installations using node -v and npm -v in the terminal. If any of the
 For the next steps, please consult the homework handout.
 
 ##### If you are using ubuntu, try also Node Version Manager
-We recommend using Node Version Manager (NVM), if you are using ubuntu:
+We recommend using Node Version Manager (NVM), if you are using ubuntu (we haven't tested it on other OS):
 
 https://github.com/nvm-sh/nvm
 
@@ -246,7 +246,7 @@ Our example code uses a ToolTip class (see below). There are several other ways 
  * react tooltip: https://react-tooltip.com/docs/getting-started
  * Material UI library: https://mui.com/material-ui/react-tooltip/
 
-Because react and d3 use different paradigms, we provide some premade code intended to make tooltip calls easier that don't use non-react libraries. We simple include the code for a tooltip class: 
+Because react and d3 use different paradigms it makes integrating premade libraries somewhat difficult. Instead, we provide some premade code intended to make tooltip calls easier: 
 
 ~~~text
 class ToolTip {
@@ -372,7 +372,7 @@ First, we want a state feature to track what is being tracked in App.js to link 
 const [brushState,setBrushState] = useState();
 ~~~
 
-In the example code brushedState is refering to the actual name of the US State, as well as the "state" of the brushing and linking.
+In the example code brushedState is refering to the actual name of the US State, and not a generic "state" object.
 
 We then pass these features into the children components as update the "brushedState" when someone mouses over an encoding for a state in one of the components
 
