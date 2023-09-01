@@ -14,8 +14,11 @@ export default function BlackHatStats(props){
     const radius = 10;
 
 
-    //draws a histogram colored by gender for each person
+    //EDIT THIS CODE TO DRAW SOMETHING USEFUL
+    //this loop updates when the props.data changes or the window resizes
+    //we can edit it to also use props.brushedState if you want to use linking
     useEffect(()=>{
+        //wait until the data loads
         if(svg === undefined | props.data === undefined){ return }
 
         //aggregate gun deaths by state

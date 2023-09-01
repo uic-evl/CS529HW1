@@ -22,32 +22,40 @@ export default function Blackhat(props){
 
     //we need to use this function to convert state names into ids so we can select individual states by name using javascript selectors
     //since spaces makes it not work correctly
-    function cleanString(d){
-        return d.replace(' ','_').replace(' ','_')
+    function cleanString(string){
+        return string.replace(' ','_').replace(' ','_')
     }
 
 
-    //you can use a hook like this to set up axes or things that don't require waiting for the data to load so it only draws once
+    //This is the main loop that renders the code once the data loads
+    //EDIT THE MAP HERE
     const mapGroupSelection = useMemo(()=>{
         //wait until the svg is rendered and data is loaded
         if(svg !== undefined & props.map !== undefined & props.data !== undefined){
 
             const stateData = props.data.states;
 
-            const stateCounts = Object.values(stateData).map(d=>d.count);
+            //EDIT THIS TO CHANGE WHAT IS USED TO ENCODE COLOR
+            const getEncodedFeature = d => d.count
+
+            //this section of code sets up the colormap
+            const stateCounts = Object.values(stateData).map(getEncodedFeature);
 
             //get color extends for the color legend
             const [stateMin,stateMax] = d3.extent(stateCounts);
 
-            //color map
+            //color map scale, scales numbers to a smaller range to use with a d3 color scale
             //we're using 1-0 to invert the red-yellow-green color scale
             //so red is bad (p.s. this is not a good color scheme still)
             const stateScale = d3.scaleLinear()
                 .domain([stateMin,stateMax])
                 .range([1,0]);
 
+            //EDIT HERE TO CHANGE THE COLOR SCHEME
+            //this function takes a number 0-1 and returns a color
             const colorMap = d3.interpolateRdYlGn;
 
+            //this set of functions extracts the features given the state name from the geojson
             function getCount(name){
                 //map uses full name, dataset uses abreviations
                 name = cleanString(name);
@@ -55,7 +63,7 @@ export default function Blackhat(props){
                 if(entry === undefined | entry.length < 1){
                     return 0
                 }
-                return entry[0].count;
+                return getEncodedFeature(entry[0]);
             }
             function getStateVal(name){
                 let count = getCount(name);
@@ -75,6 +83,7 @@ export default function Blackhat(props){
             mapGroup.selectAll('path').filter('.state')
                 .data(props.map.features).enter()
                 .append('path').attr('class','state')
+                //ID is useful if you want to do brushing as it gives you a way to select the path
                 .attr('id',d=> cleanString(d.properties.NAME))
                 .attr('d',geoGenerator)
                 .attr('fill',getStateColor)
@@ -82,6 +91,7 @@ export default function Blackhat(props){
                 .attr('stroke-width',.1)
                 .on('mouseover',(e,d)=>{
                     let state = cleanString(d.properties.NAME);
+                    //this updates the brushed state
                     if(props.brushedState !== state){
                         props.setBrushedState(state);
                     }
@@ -99,6 +109,7 @@ export default function Blackhat(props){
                 });
 
 
+            //EDIT CODE HERE TO CHANGE THE MARKERS USED FOR THE CITIES
             //draw markers for each city
             const cityData = props.data.cities
             const cityMax = d3.max(cityData.map(d=>d.count));
@@ -117,6 +128,7 @@ export default function Blackhat(props){
                 .attr('r',d=>cityScale(d.count))
                 .attr('opacity',.5);                
 
+            //EDIT THE COLOR LEGEND HERE
             // //draw a color legend, automatically scaled based on data extents
             function drawLegend(){
                 let bounds = mapGroup.node().getBBox();
@@ -128,6 +140,7 @@ export default function Blackhat(props){
                 let legendY = bounds.y + 2*fontHeight;
                 
                 let colorLData = [];
+                //EDIT THE VALUES IN THE ARRAY TO CHANGE THE NUMBER OF ITEMS IN THE COLOR LEGEND
                 for(let ratio of [0.1,.2,.3,.4,.5,.6,.7,.8,.9,.99]){
                     let val = (1-ratio)*stateMin + ratio*stateMax;
                     let scaledVal = stateScale(val);
@@ -191,6 +204,7 @@ export default function Blackhat(props){
         const zoom = d3.zoom()
             .on("zoom", zoomed);
 
+        //EDIT THIS TO CHANGE WHAT HAPPENS WHEN YOU CLICK A STATE
         function clicked(event, d) {
             event.stopPropagation();
             if(isZoomed){
@@ -230,6 +244,8 @@ export default function Blackhat(props){
 
     },[mapGroupSelection]);
 
+    //EDIT HERE TO CHANGE THE BRUSHING BEHAVIOUR IN THE MAP WHEN MOUSING OVER A STATE
+    //WILL UPDATE WHEN THE "BRUSHEDSTATE" VARIABLE CHANGES
     //brush the state by altering it's opacity when the property changes
     //brushed state can be on the same level but that makes it harder to use in linked views
     //so its in the parent app to simplify the "whitehat" part which uses linked views.

@@ -92,6 +92,9 @@ function App() {
                 <WhiteHatStats
                   data={gunData}
                   ToolTip={ToolTip}
+                  brushedState={brushedState}
+                  setBrushedState={setBrushedState}
+                  zoomedState={zoomedState}
                 />     
               </div>   
             </div>

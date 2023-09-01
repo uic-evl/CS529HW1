@@ -346,7 +346,10 @@ Also, our example code passes the ToolTip class as a prop, so in the D3Component
 
 etc
 
-#### Experimenting with Brushing in D3 and react
+#### Experimenting with Brushing and Linking in D3 and react
+
+This is a guide for anyone that wants to experiment with linking interactions between multiple variables.
+These guidelines are similar to how we deal with interactivity and state changes in general in react. Thus, we can do similar behaviour to do things like adding filters elsewhere in the app: https://react.dev/learn/reacting-to-input-with-state
 
 By default, the easiest way to deal with d3 is to just remove everything and then redraw it whenever we update the data, which will likely work for all our data
 
@@ -363,11 +366,161 @@ useEffect(()=>{
 
 However, if we want to only select certain features to update according to the  state of the app (such as with brushing), there are a few steps we need to do.
 
-First, we want a feature to track what is being tracked in App.js to link across different views:
+First, we want a state feature to track what is being tracked in App.js to link across different views:
 
 ~~~text
 const [brushState,setBrushState] = useState();
 ~~~
 
-.. todo
+In the example code brushedState is refering to the actual name of the US State, as well as the "state" of the brushing and linking.
 
+We then pass these features into the children components as update the "brushedState" when someone mouses over an encoding for a state in one of the components
+
+in App.js:
+
+~~~text
+return ( 
+    ...
+    <Whitehat
+        ...
+        brushedState={brushedState}
+        setBrushedState={setBrushedState}
+        ...
+    />
+    ...
+)
+~~~
+
+Inside Whitehat/Blackhat
+~~~text
+let mapGroup = svg.append('g').attr('class','mapbox');
+mapGroup.selectAll('path').filter('.state')
+    .data(props.map.features).enter()
+    .append('path').attr('class','state')
+    //etc...
+    .on('mouseover',(e,d)=>{
+        let state = cleanString(d.properties.NAME);
+        //this updates the brushed state
+        if(props.brushedState !== state){
+            props.setBrushedState(state);
+        }
+        //tooltip code...
+    }).on('mouseout',(e,d)=>{
+        //set props.brushedState to undefined when we stop mousing over something
+        props.setBrushedState();
+        //tooltip code...
+    });
+~~~
+
+We then add in hooks into Whitehat/Blackhat (useEffect or useMemo both work) and pass props.brushedState so it updates when we call props.setBrushedState. In the example code, the key is that brushedState is the same format as the ID attribute we attached to each path, so we can select it using d3/jquery style selectors:
+
+~~~text
+useMemo(()=>{
+    //mapgroupselection is the d3 selector for all the paths in the map
+    //which are given an id based on the state name
+
+    //check that the map is already drawn
+    if(mapGroupSelection !== undefined){
+        //check if we are currently brushing over something
+        const isBrushed = props.brushedState !== undefined;
+        //lower opacity if there is something brushed
+        mapGroupSelection.selectAll('.state')
+            .attr('opacity',isBrushed? .4:.8)
+            .attr('strokeWidth',isBrushed? 1:2);
+        //make the brushed path higher opacity
+        if(isBrushed){
+            mapGroupSelection.select('#'+props.brushedState)
+                .attr('opacity',1)
+                .attr('strokeWidth',3);
+        }
+    }
+},[mapGroupSelection,props.brushedState]);
+~~~
+
+In order to add "linking" between views, we simply do something similar in the Black/WhitehatStats views. By default, the example code passes the "brushedState" value to the linked WhiteHatStats view, but doesn't do anything with it. We have to options:
+
+* Make a seperate hook that updates certain features, as we do in the map visualization
+* Pass props.brushedState to the main view, and re-draw the graph depending on the linked view
+
+To do the latter, we  need to pass the state to the main loop:
+
+~~~text
+useEffect(()=>{
+        //wait until the data loads
+        if(svg === undefined | props.data === undefined){ return }
+
+        //aggregate gun deaths by state
+        const data = props.data.states;
+        const brushedState = props.brushedState 
+
+        svg.selectAll().remove()
+        //code here that draws the conditional graph
+    },[props.data,svg,props.brushedState]);
+~~~
+
+#### Adding Custom Glyphs in Place of premade shapes
+
+There are certains cases where you might want to make a custom shape in d3. The way to do this is to use SVG paths. First, we need to define a function to draw a shape we want using path syntax: https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths
+
+For example, we can draw a diamond by defining the points around the (0,0) origin follows:
+
+~~~text
+function drawDiamond(dummyData){
+    return 'M 0,1 -1,0 0,-1 1,0 z'
+}
+~~~
+
+This is useful since we can extend the function to draw different things based on the data
+
+we then pass this function to a d3 path call like we would with any other d3 shape. Instead of using size and position attributes, we use transforms. For example, if we define functions getScale, getX and getY to calculate the size and position of the datapoint, we can write:
+
+~~~text
+svg.selectAll('path').filter('.exampleDiamond')
+    .data(props.data).enter()
+    .append('path').attr('class','exampleDiamond')
+    .attr('d',drawDiamond)
+    .attr('transform',d=> 'scale(' + getScale(d) + ')' + 'translate(' + getX(d) + ',' + getY(d) + ')')
+~~~
+
+For example, if we wanted to draw city glyphs in a way that uses different colors to represent the portion of victims that are either male or female, we can change the code to draw two arcs of different sizes for each sub-population:
+
+~~~text
+function drawGlyph(d,male=true){
+    let ratio = (d.male_count/d.count);
+    let y = (1 - 2*ratio);
+    y = Math.sign(y)*(y**2);
+    let theta = Math.asin(y);
+    let x = Math.cos(theta);
+    if(male){
+        let arc = 'M ' + x + ',' + y + ' '
+            + 'A 1 1 0 1 1 ' + (-x) + y + 'z'
+        return arc
+    }
+    else{
+        let arc = 'M ' + x + ',' + y + ' '
+            + 'A 1 1 0 0 0 ' + (-x) + y + 'z'
+        return arc
+    }
+};
+
+//draw the glyphs for the population
+//one for male and female populations so we can use different colors
+let b = mapGroup.selectAll('.bubbles').data(cityData);
+function makeArc(male){
+    const className = male? 'maleArcs': 'femaleArcs';
+    b.enter()
+    .append('path')
+    .attr('d',d=>drawGlyph(d,male))
+    .attr('class','bubbles '+className)
+    .attr('id',d=>d.key)
+    .attr('transform',getCityTransform)
+    .attr('stroke-width',d=>.01/cityScale(d.male_count/d.count))
+    .attr('stroke','black')
+    .attr('fill',male?'navy':'magenta');
+}
+
+//male bubbles
+makeArc(true);
+//female bubbles
+makeArc(false);
+~~~
