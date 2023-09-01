@@ -14,7 +14,7 @@ export default function WhiteHatStats(props){
     const radius = 10;
 
 
-    //EDIT THIS CODE TO DRAW SOMETHING USEFUL
+    //TODO: modify or replace the code below to draw a more truthful or insightful representation of the dataset. This other representation could be a histogram, a stacked bar chart, etc.
     //this loop updates when the props.data changes or the window resizes
     //we can edit it to also use props.brushedState if you want to use linking
     useEffect(()=>{
@@ -133,9 +133,9 @@ export default function WhiteHatStats(props){
         ></div>
     );
 }
+//END of TODO #1.
 
-
-//source: trust me 
+ 
 const drawingDifficulty = {
     'IL': 9,
     'AL': 2,
