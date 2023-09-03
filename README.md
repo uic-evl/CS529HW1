@@ -1,4 +1,5 @@
 ## Instructions
+Credits: This support code has been written by Andrew Wentzel, a member of the Electronic Visualization Laboratory at UIC.
 
 ### Installing Node and npm
 
@@ -14,7 +15,7 @@ Verify the installations using node -v and npm -v in the terminal. If any of the
 
 For the next steps, please consult the homework handout.
 
-##### If you are using ubuntu, try also Node Version Manager
+##### If you are using ubuntu and have multiple node versions installed, you could try also Node Version Manager
 We recommend using Node Version Manager (NVM), if you are using ubuntu (we haven't tested it on other OS):
 
 https://github.com/nvm-sh/nvm
@@ -33,6 +34,8 @@ src/App.js, src/Blackhat.js, src/Blackhatstats.js, src/Whitehat.js and src/White
 
 In your unzipped folder, run
 > npm install
+
+(and for your own benefit, please ignore any warning messages resulting from the command above)
 
 then test the result of the support code like this:
 
