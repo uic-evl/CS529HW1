@@ -59,7 +59,7 @@ Test the program
 
 >npm start
 
-The code should launch a window in your browser showing a data visualization
+If all goes well, it will automatically launch a browser view to localhost:3000 (or similar) and show you the result of the support code. 
 
 
 ### Editing the Files
@@ -68,28 +68,28 @@ To make your later development easier, and to help wih your final project, the H
 
 In the src folder, you shoud see the following files:
 
-* App.js is our top-level app which imports the other apps. This file includes the state variables for the interface, the code for loading in the data, and the JSX for laying out the data based on the filters selected. Any changes to the layout or data would go in this file.
+* App.js is our top-level app which imports the other apps. This file includes the state variables for the interface, the code for loading in the data, and the JSX for laying out the data based on the filters selected. Any changes to the layout or data would go in this file, but you do not need to modify this file for Hw01, but it may be useful for your final project.
 
-* App.css contains the css for the code. For this example code, most of the formatting is done directly in jsx. Some of the formatting is also done in css, and this is the location of that formatting code. css is an alernative to make the code cleaner.
+* App.css contains the css for the code. For this example code, most of the formatting is done directly in jsx. Some of the formatting is also done in css, and this is the location of that formatting code. css is an alernative to make the code cleaner. You do not need to modify this file for Hw01, but it may be useful for your final project.
 
-* Blackhat.js is code for the Map when the "viewToggle" variable is set to 'blackhat'.
+* Blackhat.js is code for the Map when the "viewToggle" variable is set to 'blackhat'. You do not need to modify this file for Hw01, but it is what the starting version of the whitehat code is seeded with.
 
-* BlackhatStats.js is the code for the dummy chart below the map when the "viewToggle" variable is set to 'blackhat'. Edit this to change it so something useful.
+* BlackhatStats.js is the code for the dummy chart below the map when the "viewToggle" variable is set to 'blackhat'. You do not need to modify this file for Hw01, but it is what the starting version of the whitehatstats code is seeded with.
 
-* Whitehat.js is code for the Map when the "viewToggle" variable is set to 'whitehat'.
+* Whitehat.js is code for the Map when the "viewToggle" variable is set to 'whitehat'. You will modify this file to create your white hat version of the top (map-based) part of your whitehat solution.
 
-* WhitehatStats.js is the code for the histogram when the "viewToggle" variable is set to 'whitehat'.
+* WhitehatStats.js is the code for the histogram when the "viewToggle" variable is set to 'whitehat'. You will modify this file to create your white hat version of the bottom (stats-based) part of your whitehat solution.
 
 * D3Component.js is a template code for making a new D3 visualization. You don't need to worry about this file at this point, although it will be useful for your final project.
 
-* useSVGCanvas.js is a helper hook used in the d3 components that makes an svg that is sized to the parent container, gets a tooltip div (or makes one), and returns the constants "svg, height, width, tTip" for use in the component. This hook updates when the window resizes so your d3 visualizations will update if you use responsive layouts. You don't need to worry about this file.
+* useSVGCanvas.js is a helper hook used in the d3 components that makes an svg that is sized to the parent container, gets a tooltip div (or makes one), and returns the constants "svg, height, width, tTip" for use in the component. This hook updates when the window resizes so your d3 visualizations will update if you use responsive layouts. You don't need to worry about this file, although it may be useful for your final project.
 
 In the public folder, where the code looks for files by default:
 
 * us-states.geojson is the file with the map of the states in the geojson standard which is used by the application
 * processed_gundeaths_data.json is the processed gun data used in the application
 
-You don't need to worry about these files at this point, but it will be useful to understand what the data is structured like inside these files when you start creating your own white hat solution.
+You don't need to worry about these files at this point, but it will be useful to understand what the data is structured like inside these files when you start creating your own whitehat solution.
 
 In the python folder:
 
