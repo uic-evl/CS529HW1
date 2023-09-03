@@ -9,7 +9,7 @@ The easiest way is to simply install node from the website:
 
 https://nodejs.org/en/download
 
-During the node installation, npm will be fetched as well. 
+During the node installation, npm will be fetched as well. For your own benefit, ignore any warning messages resulting through the installation process.
 
 Verify the installations using node -v and npm -v in the terminal. If any of the verification steps gives you a command not found error, you most likely don't have the binary path to the library on your PATH variable (check Environmental Variables on windows). Related to this point, tools like NodeJS or git also provide their own shell (terminal) but you can use everything from your normal terminal; just make sure that your PATH is configured correctly.
 
@@ -48,7 +48,7 @@ If all goes well, it will automatically open a browser view to localhost:3000 (o
 
 clone the github repo :
 
-> git clone https://github.com/tehwentzel/CS529HW1.git
+> git clone https://github.com/uic-evl/CS529HW1.git
 
 Install the required npm packages:
 > cd CS529HW1
