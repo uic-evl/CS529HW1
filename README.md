@@ -156,10 +156,10 @@ The code below will return the plot as a 50x50 pixel window once the variable "g
 ~~~text
 return ( 
     <div style={{'height': '50px','width':'50px'}}>
-        <PlotD3.js 
+        <PlotD3 
             data= {gunData} 
         />
-    <div> 
+    </div> 
 ) 
 ~~~
 
@@ -176,6 +176,8 @@ New data is loaded into the project using asyncronous hooks. To accomplish this,
 ~~~text
 function App() {
   const [data,setData] = useState();
+  ...
+}
 ~~~
 
 This makes a variable called "data" that is initially undefined. This is why the D3Component code includes a catch that checks that the data isn't undefined
@@ -288,7 +290,7 @@ class ToolTip {
 }
 ~~~
 
-This includes premade calls designed to go inside javascript event calls. We also need a div selection with certain css properties to make the position work. add this code into App.css.
+This includes premade calls designed to go inside javascript event calls. We also need a div selection with certain css properties to make the position work. This code has been in App.css.
 
 ~~~text
 .tooltip {	
@@ -316,7 +318,7 @@ Our example code for a D3 component already gives you the selection for a div wi
 For example, if we have code to draw a series of circles, we can add a tooltip call as such:
 
 ~~~text
-le tTip = d3.select('.tooltip')//we need a selection for the tooltip item 
+let tTip = d3.select('.tooltip')//we need a selection for the tooltip item 
 svg.selectAll('circle')
     .data(props.data).enter()
     .append('circle')
