@@ -84,11 +84,17 @@ function App() {
             </div>
             <div style={{'height': '49%','width':'99%'}}>
               <div className={'title'} 
-                style={{'height':'2em','width':'100%','fontWeight':'bold','fontFamily':'Georgia'}}
+                style={{
+                  'height':'2em',
+                  'width':'100%',
+                  'fontWeight':'bold',
+                  'fontFamily':'Georgia'}}
               >
                 {'Gun Deaths'}
               </div>
-              <div style={{'height': 'calc(100% - 2em)','width': '50%','maxWidth': '60em','marginLeft':'25%'}}>
+              <div style={{
+                'height': 'calc(100% - 2em)',
+                'width': '100%'}}>
                 <WhiteHatStats
                   data={gunData}
                   ToolTip={ToolTip}

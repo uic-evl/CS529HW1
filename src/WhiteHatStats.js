@@ -14,117 +14,117 @@ export default function WhiteHatStats(props){
     const margin = 50;
     const radius = 10;
 
-
-    //TODO: modify or replace the code below to draw a more truthful or insightful representation of the dataset. This other representation could be a histogram, a stacked bar chart, etc.
-    //this loop updates when the props.data changes or the window resizes
-    //we can edit it to also use props.brushedState if you want to use linking
     useEffect(()=>{
         //wait until the data loads
-        if(svg === undefined | props.data === undefined){ return }
-
+        if(svg === undefined || props.data === undefined){ return }
+    
         //aggregate gun deaths by state
         const data = props.data.states;
-        
-        //get data for each state
-        const plotData = [];
-        for(let state of data){
-            const dd = drawingDifficulty[state.abreviation];
-            let entry = {
-                'count': state.count,
-                'name': state.state,
-                'easeOfDrawing': dd === undefined? 5: dd,
-                'genderRatio': state.male_count/state.count,
-            }
-            plotData.push(entry)
-        }
+    
+        // build plotData with male and female counts
+        const plotData = data.map(state => ({
+            name: state.state,
+            male: state.male_count,
+            female: state.count - state.male_count,
+            total: state.count
+        }));
 
-        //get transforms for each value into x and y coordinates
-        let xScale = d3.scaleLinear()
-            .domain(d3.extent(plotData,d=>d.easeOfDrawing))
-            .range([margin+radius,width-margin-radius]);
+        // if (props.brushedState) {
+        //     plotData = plotData.filter(d => d.name === props.brushedState);
+        // }
+   
+        //get transforms for each value into x and y coordinates        
+        let xScale = d3.scaleBand()
+            .domain(plotData.map(d => d.name))
+            .range([margin, width-margin])
+            .padding(0.2);
         let yScale = d3.scaleLinear()
-            .domain(d3.extent(plotData,d=>d.count))
-            .range([height-margin-radius,margin+radius]);
-
-
-        //draw a line showing the mean values across the curve
-        //this probably isn't actually regression
-        const regressionLine = [];
-        for(let i = 0; i <= 10; i+= 1){
-            let pvals = plotData.filter(d => Math.abs(d.easeOfDrawing - i) <= .5);
-            let meanY = 0;
-            if(pvals.length > 0){
-                for(let entry of pvals){
-                    meanY += entry.count/pvals.length
-                }
-            }
-            let point = [xScale(i),yScale(meanY)]
-            regressionLine.push(point)
-        }
-        
-        //scale color by gender ratio for no reason
-        let colorScale = d3.scaleDiverging()
-            .domain([0,.5,1])
-            .range(['magenta','white','navy']);
-
-        //draw the circles for each state
-        svg.selectAll('.dot').remove();
-        svg.selectAll('.dot').data(plotData)
-            .enter().append('circle')
-            .attr('cy',d=> yScale(d.count))
-            .attr('cx',d=>xScale(d.easeOfDrawing))
-            .attr('fill',d=> colorScale(d.genderRatio))
-            .attr('r',10)
-            .on('mouseover',(e,d)=>{
-                let string = d.name + '</br>'
-                    + 'Gun Deaths: ' + d.count + '</br>'
-                    + 'Difficulty Drawing: ' + d.easeOfDrawing;
-                props.ToolTip.moveTTipEvent(tTip,e)
-                tTip.html(string)
-            }).on('mousemove',(e)=>{
-                props.ToolTip.moveTTipEvent(tTip,e);
-            }).on('mouseout',(e,d)=>{
-                props.ToolTip.hideTTip(tTip);
-            });
-           
-        //draw the line
-        svg.selectAll('.regressionLine').remove();
-        svg.append('path').attr('class','regressionLine')
-            .attr('d',d3.line().curve(d3.curveBasis)(regressionLine))
-            .attr('stroke-width',5)
-            .attr('stroke','black')
-            .attr('fill','none');
-
-        //change the title
+            .domain([0, d3.max(plotData, d => d.total)])
+            .range([height-margin, margin]);
+    
+        // colors for male vs female
+        const colorScale = d3.scaleOrdinal()
+            .domain(["male", "female"])
+            .range(["steelblue", "pink"]);
+    
+        // stacking the male & female gun deaths data
+        const stackGen = d3.stack()
+            .keys(["male", "female"]);
+        const stackedData = stackGen(plotData);
+    
+        // clear old elements
+        svg.selectAll("*").remove();
+    
+        // draw stacked bars
+        svg.append("g")
+            .selectAll("g")
+            .data(stackedData)
+            .enter().append("g")
+                .attr("fill", d => colorScale(d.key))
+            .selectAll("rect")
+            .data(d => d)
+            .enter().append("rect")
+                .attr("x", d => xScale(d.data.name))
+                .attr("y", d => yScale(d[1]))
+                .attr("height", d => yScale(d[0]) - yScale(d[1]))
+                .attr("width", xScale.bandwidth())
+                .on("mouseover",(e,d)=>{
+                    let string = d.data.name + '</br>'
+                        + 'Total Deaths: ' + d.data.total + '</br>'
+                        + 'Male: ' + d.data.male + '</br>'
+                        + 'Female: ' + d.data.female;
+                    props.ToolTip.moveTTipEvent(tTip,e);
+                    tTip.html(string);
+                })
+                .on("mousemove",(e)=>{
+                    props.ToolTip.moveTTipEvent(tTip,e);
+                })
+                .on("mouseout",()=>{
+                    props.ToolTip.hideTTip(tTip);
+                });
+    
+                
+        // draw axes
+        svg.append("g")
+            .attr("transform",`translate(0,${height - margin})`)
+            .call(d3.axisBottom(xScale).tickSizeOuter(0))
+            .selectAll("text")
+                .attr("transform", "rotate(-90)")
+                .style("text-anchor","end")
+                .attr("dx", "-0.5em")
+                .attr("dy", "-0.5em");
+    
+        svg.append("g")
+            .attr("transform",`translate(${margin},0)`)
+            .call(d3.axisLeft(yScale));
+    
+        // title
         const labelSize = margin/2;
-        svg.selectAll('text').remove();
         svg.append('text')
             .attr('x',width/2)
             .attr('y',labelSize)
             .attr('text-anchor','middle')
             .attr('font-size',labelSize)
             .attr('font-weight','bold')
-            .text('How Hard it Is To Draw Each State Vs Gun Deaths');
-
-        //change the disclaimer here
-        svg.append('text')
-            .attr('x',width-20)
-            .attr('y',height/3)
-            .attr('text-anchor','end')
-            .attr('font-size',10)
-            .text("I'm just asking questions");
-
-        //draw basic axes using the x and y scales
-        svg.selectAll('g').remove()
-        svg.append('g')
-            .attr('transform',`translate(0,${height-margin+1})`)
-            .call(d3.axisBottom(xScale))
-
-        svg.append('g')
-            .attr('transform',`translate(${margin-2},0)`)
-            .call(d3.axisLeft(yScale))
-        
-    },[props.data,svg]);
+            .text('Gun Deaths by Gender Across States');
+    
+        // legend
+        const legend = svg.append("g")
+            .attr("transform",`translate(${width - (2*margin)},${margin})`);
+    
+        ["Male","Female"].forEach((key,i)=>{
+            let g = legend.append("g").attr("transform",`translate(0,${i*20})`);
+            g.append("rect")
+                .attr("width",12)
+                .attr("height",12)
+                .attr("fill", colorScale(key.toLowerCase()));
+            g.append("text")
+                .attr("x",18)
+                .attr("y",10)
+                .text(key);
+        });
+    
+    },[props.data,svg])
 
     return (
         <div
