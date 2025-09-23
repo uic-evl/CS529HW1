@@ -1,220 +1,257 @@
-import React, {useState,useEffect, useMemo} from 'react';
+import React, {useState,useEffect} from 'react';
 import './App.css';
 import Whitehat from './Whitehat';
-import WhiteHatStats from './WhiteHatStats'
+import WhiteHatStats from './WhiteHatStats';
 import Blackhat from './Blackhat';
 import BlackHatStats from './BlackHatStats';
-import * as d3 from 'd3';
-
 
 function App() {
-
-  //state deciding if we are looking at the blackhat or whitehat visualization
   const [viewToggle, setViewToggle] = useState('blackhat');
 
-  //state for the data, since it loads asynchronously
   const [map, setMap] = useState();
   const [gunData, setGunData] = useState();
 
-  //we put some states (brushing, zooming)
-  //at the top level and pass setZoomedState etc to the map
-  //so we can do brushing accross multiple components
   const [zoomedState,setZoomedState] = useState();
   const [selectedStuff,setSelectedStuff] = useState();
   const [brushedState,setBrushedState] = useState();
 
-  //filter for the linked view in whitehat stats
-  const [sortKey,setSortKey] = useState('age');
-
-  //load map contours
-  //react looks into the '/public' folder by default
   async function fetchMap(){
     fetch('us-states.geojson').then(paths=>{
-      paths.json().then(data=>{
-        setMap(data);
-      })
+      paths.json().then(data=> setMap(data))
     })
   }
-
-  //fetch gun data and attach a timestamp to make sorting dates easier for filters
   async function fetchGunData(){
     fetch('processed_gundeaths_data.json').then(d => {
-      d.json().then(gd=>{
-        console.log('gundata',gd)
-        setGunData(gd);
-      })
+      d.json().then(gd=> setGunData(gd))
     })
   }
 
-
-  //fetch data, called only once
   useEffect(()=>{
     fetchMap();
-    fetchGunData()
-  },[])
+    fetchGunData();
+  },[]);
 
- 
-  //called to draw the whitehat visualization
+  const tabBtn = (active) => ({
+    padding: '6px 14px',
+    borderRadius: 9999,
+    border: '1px solid #d1d5db',
+    background: active ? '#e5e7eb' : '#ffffff',
+    color: '#111827',
+    fontWeight: 600,
+    fontFamily: '"Times New Roman", Times, serif',
+    cursor: 'pointer',
+    margin: '0 6px',
+    boxShadow: active ? 'inset 0 0 0 1px #d1d5db' : 'none'
+  });
+
+  const Instructions = () => (
+    <div
+      className="shadow"
+      style={{
+        position: 'absolute',
+        right: '1.55rem',
+        top: '440px',
+        width: '16rem',
+        maxWidth: '40vw',
+        background: 'rgba(255,255,255,0.92)',
+        backdropFilter: 'blur(2px)',
+        border: '1px solid #e5e7eb',
+        borderRadius: 12,
+        padding: '0.8rem 1rem',
+        zIndex: 10,
+        fontFamily: '"Times New Roman", Times, serif'
+      }}
+    >
+      <h2 style={{margin: 0, fontSize: 22, fontFamily: '"Times New Roman", Times, serif'}}>Instructions</h2>
+      <p style={{margin: '0.35rem 0 0 0', fontSize: 16, lineHeight: 1.3}}>
+        Click a state to zoom. Click again to reset. Hover states/cities for details.
+      </p>
+    </div>
+  );
+
+  const SourcesCard = () => (
+    <div
+      className="shadow"
+      style={{
+        position: 'fixed',
+        right: '0.15rem',
+        bottom: '1.5rem',
+        width: '18rem',
+        maxWidth: '42vw',
+        background: 'rgba(255,255,255,0.92)',
+        backdropFilter: 'blur(2px)',
+        border: '1px solid #e5e7eb',
+        borderRadius: 12,
+        padding: '0.8rem 1rem',
+        zIndex: 9, // just under the tooltip/map UI if they overlap
+        fontFamily: '"Times New Roman", Times, serif'
+      }}
+    >
+      <h2 style={{margin: 0, fontSize: 20}}>Sources</h2>
+      <div style={{marginTop: 6, fontSize: 16, lineHeight: 1.35, color: '#374151'}}>
+        <div>
+          <a href="https://github.com/slate" target="_blank" rel="noopener noreferrer">
+            Slate gun-death dataset
+          </a>
+        </div>
+        <div>
+          <a href="https://www.census.gov/" target="_blank" rel="noopener noreferrer">
+            U.S. Census state population
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+
   function makeWhiteHat(){
-    
-        return (
-          <>
-            <div style={{'width':'100%','height':'50%','display':'inline-block'}}>
-              <div 
-                style={{'height': '100%','width':'calc(100% - 15em)','display':'inline-block'}}
-              >
-                  <Whitehat
-                    map={map}
-                    data={gunData}
-                    ToolTip={ToolTip}
-                    zoomedState={zoomedState}
-                    setSelectedStuff={setSelectedStuff}
-                    setZoomedState={setZoomedState}
-                    brushedState={brushedState}
-                    setBrushedState={setBrushedState}
-                  />
-              </div>
-              <div 
-                className={'shadow'}
-                style={{'height': '100%','width':'14em','display':'inline-block','verticalAlign':'text-bottom'}}
-              >
-                <h1>{'Instructions'}</h1>
-                <p>{'Click on each state to zoom and unzoom'}</p>
-              </div>
-            </div>
-            <div style={{'height': '49%','width':'99%'}}>
-              <div className={'title'} 
-                style={{'height':'2em','width':'100%','fontWeight':'bold','fontFamily':'Georgia'}}
-              >
-                {'Gun Deaths'}
-              </div>
-              <div style={{'height': 'calc(100% - 2em)','width': '50%','maxWidth': '60em','marginLeft':'25%'}}>
-                <WhiteHatStats
-                  data={gunData}
-                  ToolTip={ToolTip}
-                  brushedState={brushedState}
-                  setBrushedState={setBrushedState}
-                  zoomedState={zoomedState}
-                />     
-              </div>   
-            </div>
-          </>
-        )
-      }
-
-  //function for a simpler chloropleth map
-  function makeBlackHat(){
-
     return (
       <>
-        <div style={{'width':'100%','height':'50%','display':'inline-block'}}>
-          <div 
-            style={{'height': '100%','width':'calc(100% - 15em)','display':'inline-block'}}
-          >
-              <Blackhat
-                map={map}
-                data={gunData}
-                ToolTip={ToolTip}
-                zoomedState={zoomedState}
-                setSelectedStuff={setSelectedStuff}
-                setZoomedState={setZoomedState}
-                brushedState={brushedState}
-                setBrushedState={setBrushedState}
-              />
-          </div>
-          <div 
-            className={'shadow'}
-            style={{'height': '100%','width':'14em','display':'inline-block','verticalAlign':'text-bottom'}}
-          >
-            <h1>{'Instructions'}</h1>
-            <p>{'Click on each state to zoom and unzoom'}</p>
-          </div>
-        </div>
-        <div style={{'height': '49%','width':'99%'}}>
-          <div className={'title'} 
-            style={{'height':'2em','width':'100%','fontWeight':'bold','fontFamily':'Georgia'}}
-          >
-            {'Gun Deaths'}
-          </div>
-          <div style={{'height': 'calc(100% - 2em)','width': '50%','maxWidth': '60em','marginLeft':'25%'}}>
-            <BlackHatStats
+
+        <div style={{width:'100%', height:'50%', position:'relative'}}>
+          <div style={{height:'100%', width:'100%'}}>
+            <Whitehat
+              map={map}
               data={gunData}
               ToolTip={ToolTip}
-            />     
-          </div>   
+              zoomedState={zoomedState}
+              setSelectedStuff={setSelectedStuff}
+              setZoomedState={setZoomedState}
+              brushedState={brushedState}
+              setBrushedState={setBrushedState}
+            />
+          </div>
+          <Instructions />
+        </div>
+
+        {/* STATS (bottom half) */}
+        <div style={{height:'49%', width:'99%'}}>
+          <div
+            style={{
+              height:'100%',
+              width:'50%',
+              maxWidth:'60em',
+              margin:'0 auto'
+            }}
+          >
+            <WhiteHatStats
+              data={gunData}
+              ToolTip={ToolTip}
+              brushedState={brushedState}
+              setBrushedState={setBrushedState}
+              zoomedState={zoomedState}
+            />
+          </div>
         </div>
       </>
     )
   }
 
-  //toggle which visualization we're looking at based on the "viewToggle" state
-  const hat = ()=>{
-    if(viewToggle === 'whitehat'){
-      return makeWhiteHat();
-    }
-    else{
-      return makeBlackHat();
-    }
+  function makeBlackHat(){
+    return (
+      <>
+        {/* MAP (top half) */}
+        <div style={{width:'100%', height:'50%', position:'relative'}}>
+          <div style={{height:'100%', width:'100%'}}>
+            <Blackhat
+              map={map}
+              data={gunData}
+              ToolTip={ToolTip}
+              zoomedState={zoomedState}
+              setSelectedStuff={setSelectedStuff}
+              setZoomedState={setZoomedState}
+              brushedState={brushedState}
+              setBrushedState={setBrushedState}
+            />
+          </div>
+          <Instructions />
+        </div>
+
+        {/* STATS (bottom half) */}
+        <div style={{height:'49%', width:'100%'}}>
+          <div
+            style={{
+              height:'100%',
+              width:'50%',
+              maxWidth:'60em',
+              margin:'0 auto'
+            }}
+          >
+            <BlackHatStats data={gunData} ToolTip={ToolTip} />
+          </div>
+        </div>
+      </>
+    )
   }
 
+  const hat = () => (viewToggle === 'whitehat' ? makeWhiteHat() : makeBlackHat());
+
   return (
-    <div className="App">
-      <div className={'header'}
-        style={{'height':'2em','width':'100vw'}}
+    <div
+      className="App"
+      style={{
+        fontFamily: '"Times New Roman", Times, serif'
+      }}
+    >
+      <div className="header"
+           style={{
+             height:'3.2rem',
+             width:'100vw',
+             display:'flex',
+             alignItems:'center',
+             justifyContent:'center',
+             gap:'4px',
+             fontFamily: '"Times New Roman", Times, serif'
+           }}
       >
-        <button 
-         onClick={() => setViewToggle('whitehat')}
-         className={viewToggle === 'whitehat'? 'inactiveButton':'activeButton'}
-         >{"White Hat"}
+        <button
+          onClick={() => setViewToggle('whitehat')}
+          style={tabBtn(viewToggle === 'whitehat')}
+          aria-pressed={viewToggle === 'whitehat'}
+        >
+          White Hat
         </button>
-        <button 
-         onClick={() => setViewToggle('blackhat')}
-         className={viewToggle === 'blackhat'? 'inactiveButton':'activeButton'}
-         >{"Black Hat"}
+        <button
+          onClick={() => setViewToggle('blackhat')}
+          style={tabBtn(viewToggle === 'blackhat')}
+          aria-pressed={viewToggle === 'blackhat'}
+        >
+          Black Hat
         </button>
       </div>
-      <div className={'body'} 
-        style={{'height':'calc(100vh - 2.5em)','width':'100vw'}}
-        >
+
+      <div className="body" style={{height:'calc(100vh - 3.2rem)', width:'100vw'}}>
         {hat()}
       </div>
+
+      {/* Fixed bottom-right sources */}
+      <SourcesCard />
     </div>
   );
 }
 
-
 class ToolTip {
   static moveTTip(tTip, tipX, tipY){
     var tipBBox = tTip.node().getBoundingClientRect();
-    while(tipBBox.width + tipX > window.innerWidth){
-        tipX = tipX - 10 ;
-    }
-    while(tipBBox.height + tipY > window.innerHeight){
-        tipY = tipY - 10 ;
-    }
+    while(tipBBox.width + tipX > window.innerWidth){ tipX = tipX - 10; }
+    while(tipBBox.height + tipY > window.innerHeight){ tipY = tipY - 10; }
     tTip.style('left', tipX + 'px')
-        .style('top', tipY + 'px')
+        .style('top',  tipY + 'px')
         .style('visibility', 'visible')
-        .style('z-index', 1000);
+        .style('z-index', 1000)
+        .style('font-family', '"Times New Roman", Times, serif');
   }
-
   static moveTTipEvent(tTip, event){
-      var tipX = event.pageX + 30;
-      var tipY = event.pageY -20;
-      this.moveTTip(tTip,tipX,tipY);
+    var tipX = event.pageX + 30;
+    var tipY = event.pageY - 20;
+    this.moveTTip(tTip, tipX, tipY);
   }
-
-
-  static hideTTip(tTip){
-      tTip.style('visibility', 'hidden')
-  }
-
+  static hideTTip(tTip){ tTip.style('visibility', 'hidden'); }
   static addTTipCanvas(tTip, className, width, height){
-      tTip.selectAll('svg').selectAll('.'+className).remove();
-      let canvas = tTip.append('svg').attr('class',className)
-          .attr('height',height).attr('width',width)
-          .style('background','white');
-      return canvas
+    tTip.selectAll('svg').selectAll('.'+className).remove();
+    let canvas = tTip.append('svg').attr('class',className)
+      .attr('height',height).attr('width',width)
+      .style('background','white');
+    return canvas;
   }
 }
 
