@@ -1,0 +1,737 @@
+[
+  {
+    "ID": 1,
+    "name": "CAR-0000058",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "Cc1cc(Cl)c(Cl)c(Cl)c1",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 2,
+    "name": "CAR-0000073",
+    "part_a_smiles": "CNCCO",
+    "part_b_smiles": "Cc1cc(Cl)c(Cl)c(Cl)c1",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 3,
+    "name": "CAR-0000146",
+    "part_a_smiles": "CNCCO",
+    "part_b_smiles": "Cc1ccc(C(F)(F)F)cc1",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 4,
+    "name": "CAR-0000230",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "Cc1cc(F)c(C(F)(F)F)cc1",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 5,
+    "name": "CAR-0000057",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "Cc1cc(Cl)c(Cl)c(Cl)c1",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 6,
+    "name": "CAR-0000075",
+    "part_a_smiles": "CNCCO",
+    "part_b_smiles": "C(c1cc(Cl)c(Cl)cc1)",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 7,
+    "name": "CAR-0000177",
+    "part_a_smiles": "CN(C)C",
+    "part_b_smiles": "C(c1ccc(C(F)(F)F)cc1)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 8,
+    "name": "CAR-0000148",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c1ccc(C(F)(F)F)cc1)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 9,
+    "name": "CAR-0000043",
+    "part_a_smiles": "CCNC",
+    "part_b_smiles": "C(c1cc(Cl)c(Cl)cc1)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 10,
+    "name": "CAR-0000074",
+    "part_a_smiles": "CCNCCO",
+    "part_b_smiles": "Cc1cc(Cl)c(Cl)c(Cl)c1",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 11,
+    "name": "CAR-0000089",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3cc(Br)cc(Br)c3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 12,
+    "name": "CAR-0000066",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3cc(F)c(Cl)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 13,
+    "name": "CAR-0000090",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3cc(Cl)c(Br)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 14,
+    "name": "CAR-0000008",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3cc(Cl)c(Cl)cc3)",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 15,
+    "name": "CAR-0000059",
+    "part_a_smiles": "CN(C)C",
+    "part_b_smiles": "Cc1cc(Cl)c(Cl)c(Cl)c1",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 16,
+    "name": "CAR-0000077",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3cc(Cl)cc(Cl)c3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 17,
+    "name": "CAR-0000060",
+    "part_a_smiles": "CCNC",
+    "part_b_smiles": "Cc1cc(Cl)c(Cl)c(Cl)c1",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 18,
+    "name": "CAR-0000087",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3cc(Br)cc(Cl)c3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 19,
+    "name": "CAR-0000055",
+    "part_a_smiles": "CCNCCO",
+    "part_b_smiles": "C(c3cc(Cl)c(Cl)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 20,
+    "name": "CAR-0000061",
+    "part_a_smiles": "CN(C)C",
+    "part_b_smiles": "C(c3cc(F)c(F)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 21,
+    "name": "CAR-0000036",
+    "part_a_smiles": "CN1CCCC1",
+    "part_b_smiles": "C(c2cc(Cl)c(Cl)cc2)",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 22,
+    "name": "CAR-0000046",
+    "part_a_smiles": "CN(C)C",
+    "part_b_smiles": "C(c3ccc(Br)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 23,
+    "name": "CAR-0000038",
+    "part_a_smiles": "CN(C)C",
+    "part_b_smiles": "C(c3ccc(Cl)c(Cl)c3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 24,
+    "name": "CAR-0000147",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3ccc(C(F)(F)F)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 25,
+    "name": "CAR-0000447",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3cc(Cl)c(C(F)(F)F)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 26,
+    "name": "CAR-0000088",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3cc(Br)c(Cl)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 27,
+    "name": "CAR-0000083",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3cc(F)c(Cl)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 28,
+    "name": "CAR-0000079",
+    "part_a_smiles": "CNCCO",
+    "part_b_smiles": "C(c3cc(Cl)cc(Cl)c3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 29,
+    "name": "CAR-0000187",
+    "part_a_smiles": "CN1CCNCC1",
+    "part_b_smiles": "C(c4ccc(Cl)c(Cl)c4)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 30,
+    "name": "CAR-0000045",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3ccc(Br)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 31,
+    "name": "CAR-0000109",
+    "part_a_smiles": "CCN",
+    "part_b_smiles": "C(c3cc(Cl)c(Cl)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 32,
+    "name": "CAR-0000084",
+    "part_a_smiles": "CCNC",
+    "part_b_smiles": "C(c3cc(F)c(Cl)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 33,
+    "name": "CAR-0000015",
+    "part_a_smiles": "CCNC",
+    "part_b_smiles": "C(c3ccc(Cl)c(Cl)c3)",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 34,
+    "name": "CAR-0000262",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3cc(F)c(Br)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 35,
+    "name": "CAR-0000042",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3ccc(Cl)c(Cl)c3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 36,
+    "name": "CAR-0000039",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3ccc(Cl)c(Cl)c3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 37,
+    "name": "CAR-0000078",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3cc(Cl)cc(Cl)c3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 38,
+    "name": "CAR-0000018",
+    "part_a_smiles": "CCN(C)C",
+    "part_b_smiles": "C(c1cc(Cl)c(Cl)cc1)",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 39,
+    "name": "CAR-0000056",
+    "part_a_smiles": "CN(C)C",
+    "part_b_smiles": "C(c3cc(F)c(Cl)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 40,
+    "name": "CAR-0000069",
+    "part_a_smiles": "CCNC",
+    "part_b_smiles": "C(c3cc(Cl)c(F)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 41,
+    "name": "CAR-0000076",
+    "part_a_smiles": "CNCCO",
+    "part_b_smiles": "C(c3ccc(Cl)c(Cl)c3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 42,
+    "name": "CAR-0000034",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c1cc(Cl)c(Cl)cc1)",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 43,
+    "name": "CAR-0000023",
+    "part_a_smiles": "CN(C)C",
+    "part_b_smiles": "C(c1cc(Cl)c(Cl)cc1)",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 44,
+    "name": "CAR-0000009",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3ccc(Cl)cc3)",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 45,
+    "name": "CAR-0000044",
+    "part_a_smiles": "CCN(C)C",
+    "part_b_smiles": "C(c3ccc(Cl)c(Cl)c3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 46,
+    "name": "CAR-0000265",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3cc(C(F)(F)F)cc(Br)c3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 47,
+    "name": "CAR-0000053",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3csc(Br)c3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 48,
+    "name": "CAR-0000099",
+    "part_a_smiles": "CN(C)C",
+    "part_b_smiles": "C(c3cc(F)cc(F)c3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 49,
+    "name": "CAR-0000081",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3cc(Cl)ccc3)",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 50,
+    "name": "CAR-0000085",
+    "part_a_smiles": "CN(C)C",
+    "part_b_smiles": "C(c3cc(Cl)c(F)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 51,
+    "name": "CAR-0000098",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3cc(F)cc(F)c3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 52,
+    "name": "CAR-0000070",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3cc(Cl)c(F)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 53,
+    "name": "CAR-0000068",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3csc(Br)c3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 54,
+    "name": "CAR-0000071",
+    "part_a_smiles": "CCNC",
+    "part_b_smiles": "C(c3ccc(Br)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 55,
+    "name": "CAR-0000049",
+    "part_a_smiles": "CCN1CCOCC1",
+    "part_b_smiles": "C(c4ccc(Cl)c(Cl)c4)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 56,
+    "name": "CAR-0000263",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3cc(Br)c(F)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 57,
+    "name": "CAR-0000080",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3ccc(Cl)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 58,
+    "name": "CAR-0000054",
+    "part_a_smiles": "CN1CCOCC1",
+    "part_b_smiles": "C(c4ccc(Cl)c(Cl)c4)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 59,
+    "name": "CAR-0000067",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3ccc(Br)s3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 60,
+    "name": "CAR-0000218",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3ccc(OC(F)F)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 61,
+    "name": "CAR-0000086",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3cc(Cl)c(F)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 62,
+    "name": "CAR-0000260",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3cc(F)cc(Cl)c3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 63,
+    "name": "CAR-0000264",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3cc(Br)cc(F)c3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 64,
+    "name": "CAR-0000016",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3ccc(Cl)cc3Cl)",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 65,
+    "name": "CAR-0000101",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3cc(F)c(F)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 66,
+    "name": "CAR-0000214",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3ccc(OC(F)(F)F)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 67,
+    "name": "CAR-0000261",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3cc(C(F)(F)F)cc(C(F)(F)F)c3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 68,
+    "name": "CAR-0000030",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3cc(Cl)ccc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 69,
+    "name": "CAR-0000100",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3cc(F)c(F)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 70,
+    "name": "CAR-0000097",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3cc(F)cc(F)c3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 71,
+    "name": "CAR-0000248",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3ccc(C(F)F)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 72,
+    "name": "CAR-0000035",
+    "part_a_smiles": "CCN",
+    "part_b_smiles": "C(c1cc(Cl)c(Cl)cc1)",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 73,
+    "name": "CAR-0000040",
+    "part_a_smiles": "CN(C)CC(=O)O",
+    "part_b_smiles": "C(c1cc(Cl)c(Cl)cc1)",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 74,
+    "name": "CAR-0000041",
+    "part_a_smiles": "CNCC(=O)OC",
+    "part_b_smiles": "C(c3ccc(Cl)c(Cl)c3)",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 75,
+    "name": "CAR-0000227",
+    "part_a_smiles": "CN(C)C",
+    "part_b_smiles": "C(c3ncc(C(F)(F)F)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 76,
+    "name": "CAR-0000199",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3cc(C(F)(F)F)ccc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 77,
+    "name": "CAR-0000249",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3ccc(C(F)F)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 78,
+    "name": "CAR-0000250",
+    "part_a_smiles": "CN(C)C",
+    "part_b_smiles": "C(c3ccc(C(F)F)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 79,
+    "name": "CAR-0000200",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3cc(C(F)(F)F)ccc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 80,
+    "name": "CAR-0000215",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3cnc(C(F)(F)F)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 81,
+    "name": "CAR-0000256",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3cc(Cl)ccc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 82,
+    "name": "CAR-0000253",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3c(F)cc(C(F)(F)F)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 83,
+    "name": "CAR-0000201",
+    "part_a_smiles": "CN(C)C",
+    "part_b_smiles": "C(c3cc(C(F)(F)F)ccc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 84,
+    "name": "CAR-0000255",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3cc(F)ccc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 85,
+    "name": "CAR-0000258",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3cc(Br)ccc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 86,
+    "name": "CAR-0000259",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "COc1ccc(C)cc1",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 87,
+    "name": "CAR-0000257",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3cc(OC(F)(F)F)ccc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 88,
+    "name": "CAR-0000051",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "COc1ccc(C)cc1OC",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 89,
+    "name": "CAR-0000252",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3c(F)cc(C(F)(F)F)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 90,
+    "name": "CAR-0000052",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "COc1ccc(C)cc1OC",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 91,
+    "name": "CAR-0000254",
+    "part_a_smiles": "CN(C)C",
+    "part_b_smiles": "C(c3c(F)cc(C(F)(F)F)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 92,
+    "name": "CAR-0000026",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3ccc(C)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 93,
+    "name": "CAR-0000027",
+    "part_a_smiles": "CN(C)C",
+    "part_b_smiles": "Cc1ccc(C)cc1",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 94,
+    "name": "CAR-0000050",
+    "part_a_smiles": "CN(C)C",
+    "part_b_smiles": "COc1ccc(C)cc1OC",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 95,
+    "name": "CAR-0000120",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(C3CCN(C(=O)OC(C)(C)C)CC3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 96,
+    "name": "CAR-0000047",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(C3CCCCC3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 97,
+    "name": "CAR-0000020",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3ccccc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 98,
+    "name": "CAR-0000037",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3ccc(F)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 99,
+    "name": "CAR-0000082",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c3ccccc3)",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 100,
+    "name": "CAR-0000048",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(C(C)C)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 101,
+    "name": "CAR-0000266",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c3cc(Br)c(Br)cc3)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 102,
+    "name": "CAR-0000062",
+    "part_a_smiles": "CN",
+    "part_b_smiles": "C(c4ccc3OCOc3c4)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 103,
+    "name": "CAR-0000063",
+    "part_a_smiles": "CNC",
+    "part_b_smiles": "C(c4ccc3OCOc3c4)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 104,
+    "name": "CAR-0000064",
+    "part_a_smiles": "CN(C)C",
+    "part_b_smiles": "C(c4ccc3OCOc3c4)",
+    "part_c_smiles": ""
+  },
+  {
+    "ID": 105,
+    "name": "CAR-0000065",
+    "part_a_smiles": "CCNC",
+    "part_b_smiles": "C(c4ccc3OCOc3c4)",
+    "part_c_smiles": ""
+  }
+]

@@ -1,0 +1,1052 @@
+[
+  {
+    "name": "CAR-0000058",
+    "MW": 447.753,
+    "LogP": 5.2,
+    "LogD": 4.1,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 7.27,
+    "SMILES": "CNCCNC(C1=NC(C2=CC(Cl)=C(C(Cl)=C2)Cl)=C3NC4=CC=CC=C4C3=C1)=O"
+  },
+  {
+    "name": "CAR-0000073",
+    "MW": 477.779,
+    "LogP": 4.8,
+    "LogD": 3.8,
+    "pKa": 9.4,
+    "TPSA": 90.0,
+    "pEC50": 7.13,
+    "SMILES": "O=C(C1=NC(C2=CC(Cl)=C(C(Cl)=C2)Cl)=C3NC4=CC=CC=C4C3=C1)NCCNCCO"
+  },
+  {
+    "name": "CAR-0000146",
+    "MW": 442.441,
+    "LogP": 3.9,
+    "LogD": 2.5,
+    "pKa": 9.4,
+    "TPSA": 90.0,
+    "pEC50": 7.08,
+    "SMILES": "OCCNCCNC(C1=CC2=C(C(C3=CC=C(C=C3)C(F)(F)F)=N1)NC4=CC=CC=C42)=O"
+  },
+  {
+    "name": "CAR-0000230",
+    "MW": 416.378,
+    "LogP": 4.4,
+    "LogD": 2.4,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 7.05,
+    "SMILES": "NCCNC(=O)C1=NC(C2=CC(F)=C(C(F)(F)F)C=C2)=C2NC3=C(C=CC=C3)C2=C1"
+  },
+  {
+    "name": "CAR-0000057",
+    "MW": 433.726,
+    "LogP": 5.3,
+    "LogD": 3.8,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 7.04,
+    "SMILES": "NCCNC(=O)C1=NC(C2=CC(Cl)=C(Cl)C(Cl)=C2)=C2NC3=CC=CC=C3C2=C1"
+  },
+  {
+    "name": "CAR-0000075",
+    "MW": 457.361,
+    "LogP": 4.8,
+    "LogD": 3.3,
+    "pKa": 9.4,
+    "TPSA": 90.0,
+    "pEC50": 7.04,
+    "SMILES": "O=C(C1=NC(C2=CC(Cl)=C(C=C2)Cl)=C3NC4=CC(C)=CC=C4C3=C1)NCCCNCCO"
+  },
+  {
+    "name": "CAR-0000177",
+    "MW": 426.442,
+    "LogP": 4.5,
+    "LogD": 3.4,
+    "pKa": 8.3,
+    "TPSA": 61.0,
+    "pEC50": 7.03,
+    "SMILES": "CN(C)CCNC(=O)C1=NC(C2=CC=C(C(F)(F)F)C=C2)=C2NC3=C(C=CC=C3)C2=C1"
+  },
+  {
+    "name": "CAR-0000148",
+    "MW": 398.388,
+    "LogP": 4.4,
+    "LogD": 2.5,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 7.02,
+    "SMILES": "NCCNC(=O)C1=CC2=C(NC3=CC=CC=C32)C(C2=CC=C(C(F)(F)F)C=C2)=N1"
+  },
+  {
+    "name": "CAR-0000043",
+    "MW": 427.335,
+    "LogP": 4.8,
+    "LogD": 3.0,
+    "pKa": 10.0,
+    "TPSA": 69.8,
+    "pEC50": 7.02,
+    "SMILES": "CNCCCNC(C1=CC2=C(C(C3=CC(Cl)=C(C=C3)Cl)=N1)NC4=CC=CC=C42)=O"
+  },
+  {
+    "name": "CAR-0000074",
+    "MW": 491.806,
+    "LogP": 5.1,
+    "LogD": 4.0,
+    "pKa": 9.2,
+    "TPSA": 90.0,
+    "pEC50": 7.02,
+    "SMILES": "O=C(C1=NC(C2=CC(Cl)=C(C(Cl)=C2)Cl)=C3NC4=CC=CC=C4C3=C1)NCCCNCCO"
+  },
+  {
+    "name": "CAR-0000089",
+    "MW": 502.21,
+    "LogP": 5.1,
+    "LogD": 3.8,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 6.99,
+    "SMILES": "CNCCNC(C1=CC2=C(C(C3=CC(Br)=CC(Br)=C3)=N1)NC4=CC=CC=C42)=O"
+  },
+  {
+    "name": "CAR-0000066",
+    "MW": 396.853,
+    "LogP": 4.0,
+    "LogD": 2.6,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 6.98,
+    "SMILES": "O=C(C1=NC(C2=CC(F)=C(C=C2)Cl)=C3NC4=CC=CC=C4C3=C1)NCCNC"
+  },
+  {
+    "name": "CAR-0000090",
+    "MW": 457.759,
+    "LogP": 4.7,
+    "LogD": 3.3,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 6.97,
+    "SMILES": "CNCCNC(=O)C1=CC2=C(NC3=CC=CC=C32)C(C2=CC=C(Br)C(Cl)=C2)=N1"
+  },
+  {
+    "name": "CAR-0000008",
+    "MW": 427.335,
+    "LogP": 5.1,
+    "LogD": 3.5,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 6.97,
+    "SMILES": "CNCCNC(=O)C1=NC(C2=CC=C(Cl)C(Cl)=C2)=C2NC3=C(C)C=CC=C3C2=C1"
+  },
+  {
+    "name": "CAR-0000059",
+    "MW": 461.78,
+    "LogP": 5.3,
+    "LogD": 4.7,
+    "pKa": 8.3,
+    "TPSA": 61.0,
+    "pEC50": 6.95,
+    "SMILES": "CN(CCNC(C1=NC(C2=CC(Cl)=C(C(Cl)=C2)Cl)=C3NC4=CC=CC=C4C3=C1)=O)C"
+  },
+  {
+    "name": "CAR-0000077",
+    "MW": 413.308,
+    "LogP": 4.7,
+    "LogD": 3.2,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 6.95,
+    "SMILES": "O=C(C1=NC(C2=CC(Cl)=C(C=C2)Cl)=C3NC4=CC(C)=CC=C4C3=C1)NCCNC"
+  },
+  {
+    "name": "CAR-0000060",
+    "MW": 461.78,
+    "LogP": 5.4,
+    "LogD": 4.0,
+    "pKa": 10.0,
+    "TPSA": 69.8,
+    "pEC50": 6.92,
+    "SMILES": "CNCCCNC(=O)C1=NC(C2=CC(Cl)=C(Cl)C(Cl)=C2)=C2NC3=CC=CC=C3C2=C1"
+  },
+  {
+    "name": "CAR-0000087",
+    "MW": 457.759,
+    "LogP": 4.9,
+    "LogD": 3.6,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 6.92,
+    "SMILES": "CNCCNC(C1=CC2=C(C(C3=CC(Cl)=CC(Br)=C3)=N1)NC4=CC=CC=C42)=O"
+  },
+  {
+    "name": "CAR-0000055",
+    "MW": 457.361,
+    "LogP": 4.5,
+    "LogD": 3.0,
+    "pKa": 9.2,
+    "TPSA": 90.0,
+    "pEC50": 6.89,
+    "SMILES": "O=C(C1=NC(C2=CC(Cl)=C(C=C2)Cl)=C3NC4=CC=CC=C4C3=C1)NCCCNCCO"
+  },
+  {
+    "name": "CAR-0000061",
+    "MW": 394.425,
+    "LogP": 3.6,
+    "LogD": 2.8,
+    "pKa": 8.3,
+    "TPSA": 61.0,
+    "pEC50": 6.88,
+    "SMILES": "CN(CCNC(C1=NC(C2=CC=C(C(F)=C2)F)=C3NC4=CC=CC=C4C3=C1)=O)C"
+  },
+  {
+    "name": "CAR-0000036",
+    "MW": 467.4,
+    "LogP": 6.2,
+    "LogD": 5.0,
+    "pKa": 8.7,
+    "TPSA": 61.0,
+    "pEC50": 6.85,
+    "SMILES": "CC1=C2NC3=C(C2=CC=C1)C=C(N=C3C4=CC(Cl)=C(C=C4)Cl)C(NCCN5CCCC5)=O"
+  },
+  {
+    "name": "CAR-0000046",
+    "MW": 437.341,
+    "LogP": 4.3,
+    "LogD": 3.5,
+    "pKa": 8.3,
+    "TPSA": 61.0,
+    "pEC50": 6.84,
+    "SMILES": "CN(CCNC(C1=NC(C2=CC=C(C=C2)Br)=C3NC4=CC=CC=C4C3=C1)=O)C"
+  },
+  {
+    "name": "CAR-0000038",
+    "MW": 427.335,
+    "LogP": 4.7,
+    "LogD": 3.7,
+    "pKa": 8.3,
+    "TPSA": 61.0,
+    "pEC50": 6.8,
+    "SMILES": "CN(CCNC(C1=CC2=C(C(C3=CC(Cl)=C(C=C3)Cl)=N1)NC4=CC=CC=C42)=O)C"
+  },
+  {
+    "name": "CAR-0000147",
+    "MW": 412.415,
+    "LogP": 4.3,
+    "LogD": 2.7,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 6.8,
+    "SMILES": "CNCCNC(C1=CC2=C(C(C3=CC=C(C=C3)C(F)(F)F)=N1)NC4=CC=CC=C42)=O"
+  },
+  {
+    "name": "CAR-0000447",
+    "MW": 432.833,
+    "LogP": 4.8,
+    "LogD": 3.0,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 6.77,
+    "SMILES": "NCCNC(C1=NC(C2=CC(Cl)=C(C=C2)C(F)(F)F)=C3NC4=C(C3=C1)C=CC=C4)=O"
+  },
+  {
+    "name": "CAR-0000088",
+    "MW": 457.759,
+    "LogP": 4.7,
+    "LogD": 3.3,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 6.77,
+    "SMILES": "CNCCNC(=O)C1=CC2=C(NC3=CC=CC=C32)C(C2=CC=C(Cl)C(Br)=C2)=N1"
+  },
+  {
+    "name": "CAR-0000083",
+    "MW": 382.826,
+    "LogP": 4.1,
+    "LogD": 2.3,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 6.77,
+    "SMILES": "NCCNC(=O)C1=CC2=C(NC3=CC=CC=C32)C(C2=CC=C(Cl)C(F)=C2)=N1"
+  },
+  {
+    "name": "CAR-0000079",
+    "MW": 443.334,
+    "LogP": 4.3,
+    "LogD": 3.0,
+    "pKa": 9.4,
+    "TPSA": 90.0,
+    "pEC50": 6.75,
+    "SMILES": "OCCNCCNC(C1=NC(C2=CC(Cl)=CC(Cl)=C2)=C3NC4=CC=CC=C4C3=C1)=O"
+  },
+  {
+    "name": "CAR-0000187",
+    "MW": 468.388,
+    "LogP": 4.5,
+    "LogD": 2.9,
+    "pKa": 8.4,
+    "TPSA": 73.0,
+    "pEC50": 6.74,
+    "SMILES": "O=C(NCCN1CCNCC1)C1=NC(C2=CC=C(Cl)C(Cl)=C2)=C2NC3=C(C=CC=C3)C2=C1"
+  },
+  {
+    "name": "CAR-0000045",
+    "MW": 423.314,
+    "LogP": 4.1,
+    "LogD": 2.8,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 6.73,
+    "SMILES": "CNCCNC(=O)C1=NC(C2=CC=C(Br)C=C2)=C2NC3=CC=CC=C3C2=C1"
+  },
+  {
+    "name": "CAR-0000109",
+    "MW": 413.308,
+    "LogP": 5.3,
+    "LogD": 3.2,
+    "pKa": 9.8,
+    "TPSA": 83.8,
+    "pEC50": 6.71,
+    "SMILES": "NCCCNC(=O)C1=CC2=C(NC3=CC=CC=C32)C(C2=CC=C(Cl)C(Cl)=C2)=N1"
+  },
+  {
+    "name": "CAR-0000084",
+    "MW": 410.88,
+    "LogP": 4.2,
+    "LogD": 2.5,
+    "pKa": 10.0,
+    "TPSA": 69.8,
+    "pEC50": 6.7,
+    "SMILES": "CNCCCNC(=O)C1=CC2=C(NC3=CC=CC=C32)C(C2=CC=C(Cl)C(F)=C2)=N1"
+  },
+  {
+    "name": "CAR-0000015",
+    "MW": 441.362,
+    "LogP": 5.4,
+    "LogD": 3.5,
+    "pKa": 10.0,
+    "TPSA": 69.8,
+    "pEC50": 6.66,
+    "SMILES": "O=C(C1=NC(C2=CC(Cl)=C(C=C2)Cl)=C3NC4=CC(C)=CC=C4C3=C1)NCCCNC"
+  },
+  {
+    "name": "CAR-0000262",
+    "MW": 427.277,
+    "LogP": 4.1,
+    "LogD": 2.4,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 6.65,
+    "SMILES": "NCCNC(=O)C1=NC(C2=CC(F)=C(Br)C=C2)=C2NC3=C(C=CC=C3)C2=C1"
+  },
+  {
+    "name": "CAR-0000042",
+    "MW": 413.308,
+    "LogP": 4.5,
+    "LogD": 3.1,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 6.64,
+    "SMILES": "CNCCNC(C1=CC2=C(C(C3=CC(Cl)=C(C=C3)Cl)=N1)NC4=CC=CC=C42)=O"
+  },
+  {
+    "name": "CAR-0000039",
+    "MW": 399.281,
+    "LogP": 4.6,
+    "LogD": 2.8,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 6.64,
+    "SMILES": "NCCNC(C1=CC2=C(C(C3=CC(Cl)=C(C=C3)Cl)=N1)NC4=CC=CC=C42)=O"
+  },
+  {
+    "name": "CAR-0000078",
+    "MW": 399.281,
+    "LogP": 4.8,
+    "LogD": 3.0,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 6.64,
+    "SMILES": "NCCNC(=O)C1=NC(C2=CC(Cl)=CC(Cl)=C2)=C2NC3=CC=CC=C3C2=C1"
+  },
+  {
+    "name": "CAR-0000018",
+    "MW": 455.389,
+    "LogP": 5.6,
+    "LogD": 4.4,
+    "pKa": 9.2,
+    "TPSA": 61.0,
+    "pEC50": 6.62,
+    "SMILES": "CC1=C2NC3=C(C2=CC=C1)C=C(N=C3C4=CC(Cl)=C(C=C4)Cl)C(NCCCN(C)C)=O"
+  },
+  {
+    "name": "CAR-0000056",
+    "MW": 410.88,
+    "LogP": 4.2,
+    "LogD": 3.2,
+    "pKa": 8.3,
+    "TPSA": 61.0,
+    "pEC50": 6.61,
+    "SMILES": "CN(CCNC(C1=NC(C2=CC=C(C(F)=C2)Cl)=C3NC4=CC=CC=C4C3=C1)=O)C"
+  },
+  {
+    "name": "CAR-0000069",
+    "MW": 410.88,
+    "LogP": 4.1,
+    "LogD": 2.6,
+    "pKa": 10.0,
+    "TPSA": 69.8,
+    "pEC50": 6.61,
+    "SMILES": "CNCCCNC(C1=CC2=C(C(C3=CC=C(C(Cl)=C3)F)=N1)NC4=CC=CC=C42)=O"
+  },
+  {
+    "name": "CAR-0000076",
+    "MW": 443.334,
+    "LogP": 4.2,
+    "LogD": 2.8,
+    "pKa": 9.4,
+    "TPSA": 90.0,
+    "pEC50": 6.6,
+    "SMILES": "O=C(C1=NC(C2=CC(Cl)=C(C=C2)Cl)=C3NC4=CC=CC=C4C3=C1)NCCNCCO"
+  },
+  {
+    "name": "CAR-0000034",
+    "MW": 413.308,
+    "LogP": 5.3,
+    "LogD": 3.3,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 6.58,
+    "SMILES": "CC1=C2NC3=C(C2=CC=C1)C=C(N=C3C4=CC(Cl)=C(C=C4)Cl)C(NCCN)=O"
+  },
+  {
+    "name": "CAR-0000023",
+    "MW": 441.362,
+    "LogP": 5.3,
+    "LogD": 4.2,
+    "pKa": 8.3,
+    "TPSA": 61.0,
+    "pEC50": 6.58,
+    "SMILES": "CC1=C2NC3=C(C2=CC=C1)C=C(N=C3C4=CC(Cl)=C(C=C4)Cl)C(NCCN(C)C)=O"
+  },
+  {
+    "name": "CAR-0000009",
+    "MW": 392.89,
+    "LogP": 4.6,
+    "LogD": 3.0,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 6.56,
+    "SMILES": "CNCCNC(=O)C1=CC2=C(NC3=C(C)C=CC=C23)C(C2=CC=C(Cl)C=C2)=N1"
+  },
+  {
+    "name": "CAR-0000044",
+    "MW": 441.362,
+    "LogP": 5.0,
+    "LogD": 4.0,
+    "pKa": 9.2,
+    "TPSA": 61.0,
+    "pEC50": 6.56,
+    "SMILES": "CN(CCCNC(C1=CC2=C(C(C3=CC(Cl)=C(C=C3)Cl)=N1)NC4=CC=CC=C42)=O)C"
+  },
+  {
+    "name": "CAR-0000265",
+    "MW": 477.284,
+    "LogP": 5.4,
+    "LogD": 3.4,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 6.55,
+    "SMILES": "NCCNC(C1=NC(C2=CC(C(F)(F)F)=CC(Br)=C2)=C3NC4=C(C3=C1)C=CC=C4)=O"
+  },
+  {
+    "name": "CAR-0000053",
+    "MW": 429.343,
+    "LogP": 4.8,
+    "LogD": 3.0,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 6.51,
+    "SMILES": "CNCCNC(C1=NC(C2=CSC(Br)=C2)=C3NC4=CC=CC=C4C3=C1)=O"
+  },
+  {
+    "name": "CAR-0000099",
+    "MW": 394.425,
+    "LogP": 3.7,
+    "LogD": 2.9,
+    "pKa": 8.3,
+    "TPSA": 61.0,
+    "pEC50": 6.48,
+    "SMILES": "CN(CCNC(C1=CC2=C(C(C3=CC(F)=CC(F)=C3)=N1)NC4=CC=CC=C42)=O)C"
+  },
+  {
+    "name": "CAR-0000081",
+    "MW": 392.89,
+    "LogP": 4.6,
+    "LogD": 3.0,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 6.47,
+    "SMILES": "CNCCNC(C1=NC(C2=CC=CC(Cl)=C2)=C3NC4=C(C=CC=C4C3=C1)C)=O"
+  },
+  {
+    "name": "CAR-0000085",
+    "MW": 410.88,
+    "LogP": 4.1,
+    "LogD": 3.3,
+    "pKa": 8.3,
+    "TPSA": 61.0,
+    "pEC50": 6.46,
+    "SMILES": "CN(CCNC(C1=CC2=C(C(C3=CC=C(C(Cl)=C3)F)=N1)NC4=CC=CC=C42)=O)C"
+  },
+  {
+    "name": "CAR-0000098",
+    "MW": 380.398,
+    "LogP": 3.5,
+    "LogD": 2.2,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 6.44,
+    "SMILES": "CNCCNC(C1=CC2=C(C(C3=CC(F)=CC(F)=C3)=N1)NC4=CC=CC=C42)=O"
+  },
+  {
+    "name": "CAR-0000070",
+    "MW": 382.826,
+    "LogP": 4.0,
+    "LogD": 2.4,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 6.39,
+    "SMILES": "NCCNC(=O)C1=CC2=C(NC3=CC=CC=C32)C(C2=CC=C(F)C(Cl)=C2)=N1"
+  },
+  {
+    "name": "CAR-0000068",
+    "MW": 415.316,
+    "LogP": 4.9,
+    "LogD": 2.8,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 6.37,
+    "SMILES": "NCCNC(C1=CC2=C(C(C3=CSC(Br)=C3)=N1)NC4=CC=CC=C42)=O"
+  },
+  {
+    "name": "CAR-0000071",
+    "MW": 437.341,
+    "LogP": 4.4,
+    "LogD": 2.8,
+    "pKa": 10.0,
+    "TPSA": 69.8,
+    "pEC50": 6.35,
+    "SMILES": "CNCCCNC(=O)C1=CC2=C(NC3=CC=CC=C32)C(C2=CC=C(Br)C=C2)=N1"
+  },
+  {
+    "name": "CAR-0000049",
+    "MW": 483.399,
+    "LogP": 5.0,
+    "LogD": 4.4,
+    "pKa": 7.0,
+    "TPSA": 70.2,
+    "pEC50": 6.33,
+    "SMILES": "O=C(C1=CC2=C(C(C3=CC(Cl)=C(C=C3)Cl)=N1)NC4=CC=CC=C42)NCCCN5CCOCC5"
+  },
+  {
+    "name": "CAR-0000263",
+    "MW": 427.277,
+    "LogP": 4.2,
+    "LogD": 2.3,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 6.33,
+    "SMILES": "NCCNC(C1=NC(C2=CC=C(Br)C(F)=C2)=C3NC4=C(C3=C1)C=CC=C4)=O"
+  },
+  {
+    "name": "CAR-0000080",
+    "MW": 378.863,
+    "LogP": 4.0,
+    "LogD": 2.5,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 6.3,
+    "SMILES": "O=C(C1=NC(C2=CC=C(C=C2)Cl)=C3NC4=CC=CC=C4C3=C1)NCCNC"
+  },
+  {
+    "name": "CAR-0000054",
+    "MW": 469.372,
+    "LogP": 4.7,
+    "LogD": 4.2,
+    "pKa": 6.1,
+    "TPSA": 70.2,
+    "pEC50": 6.3,
+    "SMILES": "O=C(C1=NC(C2=CC(Cl)=C(C=C2)Cl)=C3NC4=CC=CC=C4C3=C1)NCCN5CCOCC5"
+  },
+  {
+    "name": "CAR-0000067",
+    "MW": 429.343,
+    "LogP": 4.6,
+    "LogD": 3.1,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 6.29,
+    "SMILES": "CNCCNC(C1=CC2=C(C(C3=CC=C(S3)Br)=N1)NC4=CC=CC=C42)=O"
+  },
+  {
+    "name": "CAR-0000218",
+    "MW": 396.397,
+    "LogP": 4.1,
+    "LogD": 2.3,
+    "pKa": 9.2,
+    "TPSA": 93.0,
+    "pEC50": 6.28,
+    "SMILES": "NCCNC(=O)C1=NC(C2=CC=C(OC(F)F)C=C2)=C2NC3=C(C=CC=C3)C2=C1"
+  },
+  {
+    "name": "CAR-0000086",
+    "MW": 396.853,
+    "LogP": 3.9,
+    "LogD": 2.6,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 6.27,
+    "SMILES": "O=C(C1=NC(C2=CC(F)=C(C=C2)Cl)=C3NC4=CC=CC=C4C3=C1)NCCNC"
+  },
+  {
+    "name": "CAR-0000260",
+    "MW": 382.826,
+    "LogP": 4.2,
+    "LogD": 2.5,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 6.27,
+    "SMILES": "NCCNC(C1=NC(C2=CC(F)=CC(Cl)=C2)=C3NC4=C(C3=C1)C=CC=C4)=O"
+  },
+  {
+    "name": "CAR-0000264",
+    "MW": 427.277,
+    "LogP": 4.4,
+    "LogD": 2.8,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 6.26,
+    "SMILES": "NCCNC(=O)C1=NC(C2=CC(Br)=CC(F)=C2)=C2NC3=C(C=CC=C3)C2=C1"
+  },
+  {
+    "name": "CAR-0000016",
+    "MW": 427.335,
+    "LogP": 5.0,
+    "LogD": 3.5,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 6.23,
+    "SMILES": "CNCCNC(=O)C1=CC2=C(NC3=C(C)C=CC=C23)C(C2=C(Cl)C=C(Cl)C=C2)=N1"
+  },
+  {
+    "name": "CAR-0000101",
+    "MW": 380.398,
+    "LogP": 3.4,
+    "LogD": 2.1,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 6.23,
+    "SMILES": "CNCCNC(C1=CC2=C(C(C3=CC=C(C(F)=C3)F)=N1)NC4=CC=CC=C42)=O"
+  },
+  {
+    "name": "CAR-0000214",
+    "MW": 414.387,
+    "LogP": 5.0,
+    "LogD": 2.7,
+    "pKa": 9.2,
+    "TPSA": 93.0,
+    "pEC50": 6.23,
+    "SMILES": "NCCNC(=O)C1=NC(C2=CC=C(OC(F)(F)F)C=C2)=C2NC3=C(C=CC=C3)C2=C1"
+  },
+  {
+    "name": "CAR-0000261",
+    "MW": 466.385,
+    "LogP": 5.5,
+    "LogD": 3.2,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 6.22,
+    "SMILES": "NCCNC(C1=NC(C2=CC(C(F)(F)F)=CC(C(F)(F)F)=C2)=C3NC4=CC=CC=C4C3=C1)=O"
+  },
+  {
+    "name": "CAR-0000030",
+    "MW": 378.863,
+    "LogP": 4.0,
+    "LogD": 2.5,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 6.21,
+    "SMILES": "CNCCNC(C1=CC2=C(C(C3=CC=CC(Cl)=C3)=N1)NC4=CC=CC=C42)=O"
+  },
+  {
+    "name": "CAR-0000100",
+    "MW": 366.371,
+    "LogP": 3.5,
+    "LogD": 1.9,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 6.21,
+    "SMILES": "NCCNC(=O)C1=CC2=C(NC3=CC=CC=C32)C(C2=CC=C(F)C(F)=C2)=N1"
+  },
+  {
+    "name": "CAR-0000097",
+    "MW": 366.371,
+    "LogP": 3.6,
+    "LogD": 2.0,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 6.21,
+    "SMILES": "NCCNC(C1=CC2=C(C(C3=CC(F)=CC(F)=C3)=N1)NC4=CC=CC=C42)=O"
+  },
+  {
+    "name": "CAR-0000248",
+    "MW": 380.398,
+    "LogP": 4.6,
+    "LogD": 2.3,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 6.16,
+    "SMILES": "FC(F)C1=CC=C(C=C1)C2=NC(C(NCCN)=O)=CC3=C2NC4=C3C=CC=C4"
+  },
+  {
+    "name": "CAR-0000035",
+    "MW": 427.335,
+    "LogP": 5.9,
+    "LogD": 3.7,
+    "pKa": 9.8,
+    "TPSA": 83.8,
+    "pEC50": 6.14,
+    "SMILES": "CC1=C2NC3=C(C2=CC=C1)C=C(N=C3C4=CC(Cl)=C(C=C4)Cl)C(NCCCN)=O"
+  },
+  {
+    "name": "CAR-0000040",
+    "MW": 485.371,
+    "LogP": 5.1,
+    "LogD": 3.6,
+    "pKa": 2.7,
+    "TPSA": 98.3,
+    "pEC50": 6.1,
+    "SMILES": "CC1=C2NC3=C(C=C(C(=O)NCCN(C)CC(=O)O)N=C3C3=CC(Cl)=C(Cl)C=C3)C2=CC=C1"
+  },
+  {
+    "name": "CAR-0000041",
+    "MW": 485.371,
+    "LogP": 5.0,
+    "LogD": 4.9,
+    "pKa": 7.7,
+    "TPSA": 96.1,
+    "pEC50": 6.1,
+    "SMILES": "O=C(C1=NC(C2=CC(Cl)=C(C=C2)Cl)=C3NC4=CC(C)=CC=C4C3=C1)NCCNCCOCOC"
+  },
+  {
+    "name": "CAR-0000227",
+    "MW": 427.43,
+    "LogP": 3.7,
+    "LogD": 2.8,
+    "pKa": 8.3,
+    "TPSA": 73.9,
+    "pEC50": 6.07,
+    "SMILES": "CN(C)CCNC(=O)C1=NC(C2=NC=C(C(F)(F)F)C=C2)=C2NC3=C(C=CC=C3)C2=C1"
+  },
+  {
+    "name": "CAR-0000199",
+    "MW": 398.388,
+    "LogP": 4.4,
+    "LogD": 2.4,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 6.07,
+    "SMILES": "NCCNC(=O)C1=NC(C2=CC(C(F)(F)F)=CC=C2)=C2NC3=C(C=CC=C3)C2=C1"
+  },
+  {
+    "name": "CAR-0000249",
+    "MW": 394.425,
+    "LogP": 4.5,
+    "LogD": 2.5,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 6.05,
+    "SMILES": "CNCCNC(=O)C1=CC2=C(NC3=C2C=CC=C3)C(C2=CC=C(C(F)F)C=C2)=N1"
+  },
+  {
+    "name": "CAR-0000250",
+    "MW": 408.452,
+    "LogP": 4.7,
+    "LogD": 3.2,
+    "pKa": 8.3,
+    "TPSA": 61.0,
+    "pEC50": 6.05,
+    "SMILES": "CN(C)CCNC(C1=CC2=C(C(C3=CC=C(C=C3)C(F)F)=N1)NC4=C2C=CC=C4)=O"
+  },
+  {
+    "name": "CAR-0000200",
+    "MW": 412.415,
+    "LogP": 4.3,
+    "LogD": 2.6,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 6.01,
+    "SMILES": "CNCCNC(=O)C1=NC(C2=CC(C(F)(F)F)=CC=C2)=C2NC3=C(C=CC=C3)C2=C1"
+  },
+  {
+    "name": "CAR-0000215",
+    "MW": 399.376,
+    "LogP": 3.5,
+    "LogD": 1.9,
+    "pKa": 9.2,
+    "TPSA": 96.7,
+    "pEC50": 6.0,
+    "SMILES": "NCCNC(=O)C1=NC(C2=CN=C(C(F)(F)F)C=C2)=C2NC3=C(C=CC=C3)C2=C1"
+  },
+  {
+    "name": "CAR-0000256",
+    "MW": 364.836,
+    "LogP": 4.1,
+    "LogD": 2.3,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 5.99,
+    "SMILES": "NCCNC(=O)C1=NC(C2=CC(Cl)=CC=C2)=C2NC3=C(C=CC=C3)C2=C1"
+  },
+  {
+    "name": "CAR-0000253",
+    "MW": 430.405,
+    "LogP": 4.3,
+    "LogD": 2.7,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 5.94,
+    "SMILES": "O=C(C1=NC(C2=CC(F)=CC(C(F)(F)F)=C2)=C3NC4=CC=CC=C4C3=C1)NCCNC"
+  },
+  {
+    "name": "CAR-0000201",
+    "MW": 426.442,
+    "LogP": 4.5,
+    "LogD": 3.3,
+    "pKa": 8.3,
+    "TPSA": 61.0,
+    "pEC50": 5.8,
+    "SMILES": "CN(C)CCNC(=O)C1=NC(C2=CC(C(F)(F)F)=CC=C2)=C2NC3=C(C=CC=C3)C2=C1"
+  },
+  {
+    "name": "CAR-0000255",
+    "MW": 348.381,
+    "LogP": 3.6,
+    "LogD": 1.9,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 5.8,
+    "SMILES": "NCCNC(=O)C1=NC(C2=CC(F)=CC=C2)=C2NC3=C(C=CC=C3)C2=C1"
+  },
+  {
+    "name": "CAR-0000258",
+    "MW": 409.287,
+    "LogP": 4.3,
+    "LogD": 2.6,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 5.8,
+    "SMILES": "NCCNC(=O)C1=NC(C2=CC(Br)=CC=C2)=C2NC3=C(C=CC=C3)C2=C1"
+  },
+  {
+    "name": "CAR-0000259",
+    "MW": 360.417,
+    "LogP": 3.4,
+    "LogD": 1.8,
+    "pKa": 9.2,
+    "TPSA": 93.0,
+    "pEC50": 5.8,
+    "SMILES": "NCCNC(C1=NC(C2=CC(OC)=CC=C2)=C3NC4=CC=CC=C4C3=C1)=O"
+  },
+  {
+    "name": "CAR-0000257",
+    "MW": 414.387,
+    "LogP": 4.8,
+    "LogD": 2.6,
+    "pKa": 9.2,
+    "TPSA": 93.0,
+    "pEC50": 5.89,
+    "SMILES": "NCCNC(C1=NC(C2=CC=CC(OC(F)(F)F)=C2)=C3NC4=CC=CC=C4C3=C1)=O"
+  },
+  {
+    "name": "CAR-0000051",
+    "MW": 390.443,
+    "LogP": 3.1,
+    "LogD": 1.6,
+    "pKa": 9.2,
+    "TPSA": 102.3,
+    "pEC50": 5.88,
+    "SMILES": "COC1=CC=C(C2=NC(C(=O)NCCN)=CC3=C2NC2=CC=CC=C23)C=C1OC"
+  },
+  {
+    "name": "CAR-0000252",
+    "MW": 416.378,
+    "LogP": 4.4,
+    "LogD": 2.5,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 5.82,
+    "SMILES": "NCCNC(=O)C1=NC(C2=C(F)C=C(C(F)(F)F)C=C2)=C2NC3=C(C=CC=C3)C2=C1"
+  },
+  {
+    "name": "CAR-0000052",
+    "MW": 404.47,
+    "LogP": 3.0,
+    "LogD": 1.8,
+    "pKa": 10.2,
+    "TPSA": 88.3,
+    "pEC50": 5.78,
+    "SMILES": "CNCCNC(C1=CC2=C(C(C3=CC=C(C(OC)=C3)OC)=N1)NC4=CC=CC=C42)=O"
+  },
+  {
+    "name": "CAR-0000254",
+    "MW": 444.432,
+    "LogP": 4.5,
+    "LogD": 3.4,
+    "pKa": 8.3,
+    "TPSA": 61.0,
+    "pEC50": 5.74,
+    "SMILES": "CN(C)CCNC(=O)C1=NC(C2=C(F)C=C(C(F)(F)F)C=C2)=C2NC3=C(C=CC=C3)C2=C1"
+  },
+  {
+    "name": "CAR-0000026",
+    "MW": 358.445,
+    "LogP": 3.7,
+    "LogD": 2.5,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 5.73,
+    "SMILES": "CNCCNC(=O)C1=CC2=C(NC3=CC=CC=C32)C(C2=CC=C(C)C=C2)=N1"
+  },
+  {
+    "name": "CAR-0000027",
+    "MW": 372.472,
+    "LogP": 3.9,
+    "LogD": 3.2,
+    "pKa": 8.3,
+    "TPSA": 61.0,
+    "pEC50": 5.73,
+    "SMILES": "CC1=CC=C(C2=NC(C(=O)NCCN(C)C)=CC3=C2NC2=CC=CC=C23)C=C1"
+  },
+  {
+    "name": "CAR-0000050",
+    "MW": 418.497,
+    "LogP": 3.2,
+    "LogD": 2.5,
+    "pKa": 8.3,
+    "TPSA": 79.5,
+    "pEC50": 5.73,
+    "SMILES": "COC1=CC=C(C=C1OC)C2=NC(C(NCCN(C)C)=O)=CC3=C2NC4=CC=CC=C43"
+  },
+  {
+    "name": "CAR-0000120",
+    "MW": 451.571,
+    "LogP": 4.0,
+    "LogD": 2.9,
+    "pKa": 10.2,
+    "TPSA": 99.4,
+    "pEC50": 5.62,
+    "SMILES": "CNCCNC(C1=CC2=C(C(C3CCN(CC3)C(OC(C)(C)C)=O)=N1)NC4=CC=CC=C42)=O"
+  },
+  {
+    "name": "CAR-0000047",
+    "MW": 350.466,
+    "LogP": 3.8,
+    "LogD": 2.4,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 5.62,
+    "SMILES": "O=C(C1=NC(C2CCCCC2)=C3NC4=CC=CC=C4C3=C1)NCCNC"
+  },
+  {
+    "name": "CAR-0000020",
+    "MW": 344.418,
+    "LogP": 3.3,
+    "LogD": 2.0,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 5.43,
+    "SMILES": "CNCCNC(=O)C1=CC2=C(NC3=CC=CC=C32)C(C2=CC=CC=C2)=N1"
+  },
+  {
+    "name": "CAR-0000037",
+    "MW": 362.408,
+    "LogP": 3.4,
+    "LogD": 2.2,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 5.43,
+    "SMILES": "O=C(C1=NC(C2=CC(F)=CC=C2)=C3NC4=CC=CC=C4C3=C1)NCCNC"
+  },
+  {
+    "name": "CAR-0000082",
+    "MW": 358.445,
+    "LogP": 4.0,
+    "LogD": 2.5,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 5.4,
+    "SMILES": "CNCCNC(=O)C1=NC(C2=CC=CC=C2)=C2NC3=C(C)C=CC=C3C2=C1"
+  },
+  {
+    "name": "CAR-0000048",
+    "MW": 310.401,
+    "LogP": 2.8,
+    "LogD": 1.9,
+    "pKa": 10.2,
+    "TPSA": 69.8,
+    "pEC50": 5.2,
+    "SMILES": "CNCCNC(=O)C1=CC2=C(NC3=CC=CC=C32)C(C(C)C)=N1"
+  },
+  {
+    "name": "CAR-0000266",
+    "MW": 488.183,
+    "LogP": 5.0,
+    "LogD": 3.1,
+    "pKa": 9.2,
+    "TPSA": 83.8,
+    "pEC50": 5.2,
+    "SMILES": "NCCNC(=O)C1=NC(C2=CC(Br)=C(Br)C=C2)=C2NC3=C(C=CC=C3)C2=C1"
+  },
+  {
+    "name": "CAR-0000062",
+    "MW": 374.4,
+    "LogP": 3.3,
+    "LogD": 1.6,
+    "pKa": 9.2,
+    "TPSA": 102.3,
+    "pEC50": 4.9,
+    "SMILES": "NCCNC(C1=CC2=C(C(C3=CC=C4OCOC4=C3)=N1)NC5=CC=CC=C52)=O"
+  },
+  {
+    "name": "CAR-0000063",
+    "MW": 388.427,
+    "LogP": 3.2,
+    "LogD": 1.9,
+    "pKa": 10.2,
+    "TPSA": 88.3,
+    "pEC50": 4.9,
+    "SMILES": "CNCCNC(C1=CC2=C(C(C3=CC=C4OCOC4=C3)=N1)NC5=CC=CC=C52)=O"
+  },
+  {
+    "name": "CAR-0000064",
+    "MW": 402.454,
+    "LogP": 3.4,
+    "LogD": 2.5,
+    "pKa": 8.3,
+    "TPSA": 79.5,
+    "pEC50": 4.9,
+    "SMILES": "CN(CCNC(C1=CC2=C(C(C3=CC=C4OCOC4=C3)=N1)NC5=CC=CC=C52)=O)C"
+  },
+  {
+    "name": "CAR-0000065",
+    "MW": 402.454,
+    "LogP": 3.4,
+    "LogD": 1.8,
+    "pKa": 10.0,
+    "TPSA": 88.3,
+    "pEC50": 4.9,
+    "SMILES": "CNCCCNC(C1=CC2=C(C(C3=CC=C4OCOC4=C3)=N1)NC5=CC=CC=C52)=O"
+  }
+]

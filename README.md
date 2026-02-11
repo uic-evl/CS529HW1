@@ -1,531 +1,333 @@
-## Instructions
-Credits: This support code has been written by Andrew Wentzel, a member of the Electronic Visualization Laboratory at UIC.
 
-### Installing Node and npm
+# Interactive Visualization of Structure-Activity Relationships in Antimalarial Compounds
 
-There are several ways to install node.js which is required to run react.
+### Project Repository: https://github.com/pleaselukau/SAR-Visualization
 
-The easiest way is to simply install node from the website:
+### Deployed Application: https://sar-visualization.onrender.com/
 
-https://nodejs.org/en/download
+## CS 529: Visual Data Science (VDS) - Fall 2025
 
-During the node installation, npm will be fetched as well. For your own benefit, ignore any warning messages resulting through the installation process.
+**University of Illinois Chicago (UIC)**
 
-Verify the installations using node -v and npm -v in the terminal. If any of the verification steps gives you a command not found error, you most likely don't have the binary path to the library on your PATH variable (check Environmental Variables on windows). Related to this point, tools like NodeJS or git also provide their own shell (terminal) but you can use everything from your normal terminal; just make sure that your PATH is configured correctly.
+-----
 
-For the next steps, please consult the homework handout.
+## Team
 
-##### If you are using ubuntu and have multiple node versions installed, you could try also Node Version Manager
-We recommend using Node Version Manager (NVM), if you are using ubuntu (we haven't tested it on other OS):
+  * **Project Manager:** Please Lukau
+  * **Team Members:** Harsh Shelke, Hrushikesh Joshi
+  * **Clients:** Dr. Kevin A. Kunz and Prof. Paul R. Carlier (UICentre)
 
-https://github.com/nvm-sh/nvm
+-----
 
- In the command line, use NVM to install Node. We built this demo using node v14.15.4, but any version that support create-react-app should work:
+## Project Overview
 
- > nvm install 14.15.4
+This project is an interactive, browser-based visualization system designed to help medicinal chemists explore **Structure-Activity Relationships (SAR)** in a real-world drug discovery dataset. The system visualizes antimalarial compounds sharing a common **ß-carboline** molecular backbone, allowing researchers to detect patterns, clusters, and outliers by linking a compound's measured antimalarial potency with its calculated physicochemical properties and 2D chemical structure.
 
+The visualization integrates chemical structure rendering and similarity computations directly into the visual analysis, helping guide decisions on which compounds are most promising for future synthesis.
 
-### Fork the Hw01 support code repository or download the .zip
+-----
 
-If you are familiar with Github, then fork this repository and proceed to your copy of the subfolders in the repository. Otherwise, just download the zip with all the files.
+## Key Features
 
-For this assignment, you will only need to work (i.e., edit) the following files: 
-src/App.js, src/Blackhat.js, src/Blackhatstats.js, src/Whitehat.js and src/Whitehatstats.js.
+  * **Interactive Scatter Plot:** Explore correlations between any two chemical properties (Weight, Log P, Log D, pKa, TPSA, Potency) with 15 different dimension combinations. Click compounds to select/highlight them across all views.
+  
+  * **Parallel Coordinates Plot:** View all compounds across multiple dimensions simultaneously. Interactive brushing allows filtering compounds by property ranges. Selected compounds are highlighted in orange.
+  
+  * **Radar Chart (Spider Plot):** Compare selected compounds across all six properties in a radial visualization, showing how multiple compounds overlap in chemical space.
+  
+  * **Structural Similarity Heatmap:** Visualize pairwise structural similarities between all compounds using Tanimoto similarity computed from Morgan fingerprints. Click cells to view detailed comparison of compound pairs. Expand to full-screen view for detailed exploration.
+  
+  * **Selection Panel:** Browse all compounds with their 2D molecular structures, properties, and select compounds for highlighting or comparison. Switch between "Highlight" mode (multiple selections) and "Compare" mode (max 2 compounds).
+  
+  * **Comparison Panel:** Side-by-side view of up to 2 selected compounds for detailed comparison.
+  
+  * **Coordinated & Linked Views:** Selecting a compound in any view instantly highlights it across all other visualizations with coordinated colors (orange for selected, steelblue for unselected).
+  
+  * **Interactive Tooltips:** Hover over compounds in scatter plots and parallel coordinates to see detailed property information.
+  
+  * **Dynamic Filtering & Brushing:** Use interactive brushes in the parallel coordinates plot to filter compounds by property ranges, with automatic visual feedback across all views.
 
-In your unzipped folder, run
-> npm install
+-----
 
-(and for your own benefit, please ignore any warning messages resulting from the command above)
+## Technology Stack
 
-then test the result of the support code like this:
+  * **Frontend Framework:** **React** with **Vite** for fast development and building
+  * **Visualization Library:** **D3.js** (for all interactive graphics and plots)
+  * **Styling:** **Tailwind CSS** for responsive UI design
+  * **Data Processing & Backend:** **Python** with **RDKit** for cheminformatics computations
+  * **Cheminformatics:** **RDKit** (used for processing SMILES, computing molecular fingerprints/properties, and rendering 2D structures as SVGs)
 
-> npm start
+-----
 
-If all goes well, it will automatically open a browser view to localhost:3000 (or similar) and show you the result of the support code.
+## Data
 
+The dataset, originally provided by the Carlier laboratory at UIC as an Excel file, contained 105 compounds. After data cleaning (which removed 10 rows with invalid potency values), the final dataset used for visualization contains **95 compounds**.
 
-### If you just pull from Gitub (instead of downloading the zip as above): Pulling the project from Github
+The key data fields in `data.json` are:
 
-clone the github repo :
+  * **`name`**: The unique compound identifier (e.g., `CAR-0000058`).
+  * **`ID`**: The compound ID used for selection and filtering.
+  * **`smiles`**: The chemical structure in SMILES notation (a text format).
+  * **`potency`**: The measured antimalarial potency (pEC50, the target variable for visualization).
+  * **Five computed physicochemical properties**:
+      * `weight` (Molecular Weight)
+      * `log_p` (Log P, a measure of lipophilicity)
+      * `log_d` (Log D)
+      * `pka` (Acid dissociation constant)
+      * `tpsa` (Topological Polar Surface Area)
 
-> git clone https://github.com/uic-evl/CS529HW1.git
+The `similarities.json` file contains pairwise structural similarity scores computed using Tanimoto similarity on Morgan fingerprints (radius 2), stored as a dictionary mapping each compound name to a list of similar compounds with their similarity scores.
 
-Install the required npm packages:
-> cd CS529HW1
+-----
 
-> npm install
+## Installation & Setup
 
-Test the program
+### Prerequisites
 
->npm start
+- **Node.js** (v16 or higher recommended) and **npm**
+- **Python 3.7+** (for computing structural similarities)
+- **RDKit** Python package (for cheminformatics computations)
 
-If all goes well, it will automatically launch a browser view to localhost:3000 (or similar) and show you the result of the support code. 
+### Installing Node.js and npm
 
+Install Node.js from the official site: https://nodejs.org/en/download
 
-### Editing the Files
+During installation, npm will also be installed. Verify installations:
 
-To make your later development easier, and to help wih your final project, the Hw01 code is embedded as a React app. You don't need to worry about React at this point. If you're curious, React is a free, open-source javascript UI (User Interface) library developed by Facebook/Meta. If for later assignments or for your final project you'd like to change the structure of the webpage being shown (more than two views, or differently sized views etc.), then you'd work with React and JSX, which stands for JavaScript XML. JSX makes it easier to write and add HTML in React.
+```bash
+node -v
+npm -v
+```
 
-In the src folder, you shoud see the following files:
+#### Optional: Using Node Version Manager (NVM)
 
-* App.js is our top-level app which imports the other apps. This file includes the state variables for the interface, the code for loading in the data, and the JSX for laying out the data based on the filters selected. Any changes to the layout or data would go in this file, but you do not need to modify this file for Hw01, but it may be useful for your final project.
+For Ubuntu/Linux or macOS, consider using NVM: https://github.com/nvm-sh/nvm
 
-* App.css contains the css for the code. For this example code, most of the formatting is done directly in jsx. Some of the formatting is also done in css, and this is the location of that formatting code. css is an alernative to make the code cleaner. You do not need to modify this file for Hw01, but it may be useful for your final project.
+```bash
+nvm install 18
+nvm use 18
+```
 
-* Blackhat.js is code for the Map when the "viewToggle" variable is set to 'blackhat'. You do not need to modify this file for Hw01, but it is what the starting version of the whitehat code is seeded with.
+### Getting the Code
 
-* BlackhatStats.js is the code for the dummy chart below the map when the "viewToggle" variable is set to 'blackhat'. You do not need to modify this file for Hw01, but it is what the starting version of the whitehatstats code is seeded with.
+Clone the repository:
 
-* Whitehat.js is code for the Map when the "viewToggle" variable is set to 'whitehat'. You will modify this file to create your white hat version of the top (map-based) part of your whitehat solution.
+```bash
+git clone https://github.com/pleaselukau/SAR-Visualization
+cd SAR-Visualization
+```
+
+### Installing Dependencies
+
+#### Frontend (Client)
 
-* WhitehatStats.js is the code for the histogram when the "viewToggle" variable is set to 'whitehat'. You will modify this file to create your white hat version of the bottom (stats-based) part of your whitehat solution.
+```bash
+cd client
+npm install
+```
 
-* D3Component.js is a template code for making a new D3 visualization. You don't need to worry about this file at this point, although it will be useful for your final project.
+#### Backend (Server - Optional, for computing similarities)
 
-* useSVGCanvas.js is a helper hook used in the d3 components that makes an svg that is sized to the parent container, gets a tooltip div (or makes one), and returns the constants "svg, height, width, tTip" for use in the component. This hook updates when the window resizes so your d3 visualizations will update if you use responsive layouts. You don't need to worry about this file, although it may be useful for your final project.
+```bash
+cd server
+# Install RDKit (requires conda or pip)
+# Using conda (recommended):
+conda create -n rdkit-env python=3.9
+conda activate rdkit-env
+conda install -c conda-forge rdkit
 
-In the public folder, where the code looks for files by default:
+# Or using pip (if RDKit wheels are available for your platform):
+pip install rdkit
+```
 
-* us-states.geojson is the file with the map of the states in the geojson standard which is used by the application
-* processed_gundeaths_data.json is the processed gun data used in the application
+### Running the Application
 
-You don't need to worry about these files at this point, but it will be useful to understand what the data is structured like inside these files when you start creating your own whitehat solution.
+#### Development Mode
 
-In the python folder:
+From the `client` directory:
 
-* Preprocessing.ipynb is a jupyter notebook with the code used to process the example data
-* SlateGunDeaths.csv is the original data
-* state_populations.csv is a file with state populations from 2014
-* states-10m.json is a file with the us states similar to us-statse.geojson
+```bash
+npm run dev
+```
 
-You don't need to worry about these files.
+This launches the Vite development server (typically at `http://localhost:5173/`). Hot reload is enabled.
 
-From this point on, please use the homework handout to figure out what you need to do.
+#### Computing Structural Similarities (Optional)
 
-### For Extra-Credit
+There are two scripts available for computing structural similarities:
 
-#### Creating a new D3 Visualization
+**Option 1: Using `compute_similarities.py` (Recommended for production)**
 
-Our example code has a file called D3Compnent.js, which serves as a template for one method of writing D3 code with react.
+```bash
+cd server
+python compute_similarities.py
+```
 
-To create a new D3 component, first rename the file to something fitting. We will use <PlotD3> as an example
+This reads `client/public/data.json` and generates `client/public/similarities.json`.
 
-* Copy the file and rename it to "PlotD3.js"
-* Change the class name in the file from
+**Option 2: Using `Generated_SVGS_Script/automate_svgs.py` (All-in-one script)**
 
-> export default function D3Component(props){
+This script both generates SVG files and computes similarity matrices:
 
-to 
-> export default function PlotD3(props){
+```bash
+cd server/Generated_SVGS_Script
+# Ensure RDKit is installed in your environment
+python automate_svgs.py
+```
 
+This script:
+- Generates 2D molecular structure SVGs from SMILES strings (saved to `generated_svgs/`)
+- Computes pairwise structural similarities using Tanimoto similarity on Morgan fingerprints
+- Saves similarity data to `similarities.json`
+- Uses `compounds.json` as input (which should contain compounds with `SMILES` and `name` fields)
 
-Then put the d3 code in the relevant section of the file.
-Put any code that doesn't require the data to be loaded here in place of the console.log call:
+**Note:** The `Generated_SVGS_Script` folder contains pre-generated SVGs and similarity data that can be copied to the `client/public/` directory if needed.
 
-~~~text
-useEffect(()=>{
-        if(svg !== undefined){
-            console.log('here',height,width)
-        }
-    },[svg])
-~~~
+### Project Structure
 
-This code will run once any time the window updates
+```
+SAR-Visualization/
+├── client/                    # React frontend application
+│   ├── src/
+│   │   ├── App.jsx           # Main application component
+│   │   ├── components/       # React visualization components
+│   │   │   ├── ScatterPlot.jsx
+│   │   │   ├── ParallelCoordiantePlot.jsx
+│   │   │   ├── RadarChart.jsx
+│   │   │   ├── Heatmap.jsx
+│   │   │   ├── SelectionPanel.jsx
+│   │   │   ├── ComparisonPanel.jsx
+│   │   │   └── Tooltip.jsx
+│   │   ├── index.jsx         # React entry point
+│   │   └── index.css         # Global styles
+│   ├── public/
+│   │   ├── data.json         # Compound data
+│   │   ├── similarities.json # Structural similarity matrix
+│   │   └── svgs/             # Pre-rendered 2D molecular structures
+│   ├── package.json
+│   └── vite.config.js        # Vite configuration
+│
+└── server/                    # Python backend scripts
+    ├── compute_similarities.py  # Generate similarity matrix from SMILES
+    ├── generate_svgs.py         # Generate SVG structures (if needed)
+    ├── data.xlsx                # Original Excel data file
+    └── Generated_SVGS_Script/  # Automated SVG generation and similarity computation
+        ├── automate_svgs.py     # Main script: generates SVGs and computes similarities
+        ├── compounds.json       # Compound data in JSON format
+        ├── compound_similarities.json  # Pre-computed similarity matrix
+        ├── generated_svgs/      # Generated 2D molecular structure SVGs
+        └── rdkit-env/           # Python virtual environment (conda/venv)
+```
 
-Put any code that needs to be updated once the data is loaded here:
 
-~~~text
-useEffect(()=>{
-        if(svg !== undefined & props.data !== undefined){
-            //put code here
-            console.log('here',props.data,height,width);
-        }
-    },[svg,props.data]);
-~~~
+-----
 
-This second loop will update when the window resizes or the variable passes in the properties as "data" changes.
+## Server Scripts
 
-To put this visualization into the main app, go to App.js. At the top of the file, import the component:
+### Generated_SVGS_Script
 
-import PlotD3 from './PlotD3.js';
+The `server/Generated_SVGS_Script/` folder contains an automated pipeline for generating molecular structure visualizations and computing structural similarities. This is a comprehensive script that handles both SVG generation and similarity computation in one workflow.
 
-The component automaticaly sizes itself to the parent container in App.js. Thus, put the component in the return of App.js wrapped in a div of the desired dimensions, and pass the data to be used as an property. 
+#### Purpose
 
-The code below will return the plot as a 50x50 pixel window once the variable "gunData" loads
+The `automate_svgs.py` script performs two main tasks:
 
-~~~text
-return ( 
-    <div style={{'height': '50px','width':'50px'}}>
-        <PlotD3 
-            data= {gunData} 
-        />
-    </div> 
-) 
-~~~
+1. **SVG Generation**: Converts SMILES strings to 2D molecular structure SVGs using RDKit
+   - Generates high-quality SVG files (400x400px) for each compound
+   - Saves SVGs to the `generated_svgs/` directory
+   - Files are named using the compound name (e.g., `CAR-0000058.svg`)
 
-#### Preprocessing data to generate new information
+2. **Similarity Computation**: Calculates pairwise structural similarities
+   - Uses Morgan fingerprints (radius 2) for molecular representation
+   - Computes Tanimoto similarity between all compound pairs
+   - Sorts similarities in descending order for each compound
+   - Saves results to `similarities.json`
 
-We provide an example of processed code in the form of processed_gundeaths_data.json, as well as the original code SlateGunDeath.csv and slate_populations.csv
+#### Usage
 
-The preprocessing used to create our example data can be found in python/Preprocessing.ipynb as a jupyter notbook. For EC, you could preprocess the data to generate new information, for example to add per-state voting information or information about the leniency of per-state gun legislatures.
+```bash
+cd server/Generated_SVGS_Script
 
-#### Loading New Data
+# Activate your RDKit environment (if using conda)
+conda activate rdkit-env
 
-New data is loaded into the project using asyncronous hooks. To accomplish this, first, write a new function for calling the preprocessed data. First, we recommend putting the data as part of the App state using react's 'useState':
+# Run the script
+python automate_svgs.py
+```
 
-~~~text
-function App() {
-  const [data,setData] = useState();
+#### Input Format
+
+The script expects `compounds.json` with the following structure:
+
+```json
+[
+  {
+    "name": "CAR-0000058",
+    "SMILES": "CCOc1cc2c(cc1OC)nc(n2)Nc3ccc(cc3)Cl"
+  },
   ...
-}
-~~~
+]
+```
 
-This makes a variable called "data" that is initially undefined. This is why the D3Component code includes a catch that checks that the data isn't undefined
+#### Output
 
-~~~text
-useEffect(()=>{
-        if(svg !== undefined & props.data !== undefined){
-            //put code here
-            console.log('here',props.data,height,width);
-        }
-    },[svg,props.data]);
-~~~
-
-The variable can be changed using
-
-> setData(newdata)
-
-The data needs to be loaded asyncronously. If the data is in a json form, use something like
-
-~~~text
-async function fetchData(){
-    fetch('data.json').then(paths=>{
-        paths.json().then(newData=>{
-            //do any processing of the data here
-            setData(newData)
-        })
-    })
-}
-~~~
-
-for CSV files, we need to use a slightly different code. d3 proves CSV processing
-
-~~~text 
-import * as d3 from 'd3';
-
-...
-
-async function fetchCSV(){
-    d3.csv('data.csv').then(d=>{
-        setData(d);
-    })
-}
-~~~
-
-The calls for "then()" are because fetch and d3.csv return promises. You can read more about those here:
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
-
-The easiest way to load the data in the app is then to wrap all your data loading functions in a hook like this:
-
-~~~text
-//fetch data, called only once
-  useEffect(()=>{
-    fetchData();
-    fetchCSV(); 
-  },[])
-~~~
-
-The '[]' argument passed to useEffect lists the props to listen to for an update to the hook. By passing an empty array we only call the function once at the start of the rendering. If we wanted to reload the data after a variable change that is used in the data query, we would change it to:
-
-~~~text
-useEffect(()=>{
-    fetchDataWithParameters(param);
-},[param]);
-~~~
-
-#### Additional Tooltips via other libraries
-
-Our example code uses a ToolTip class (see below). There are several other ways to achieve tooltips in javascript. Some premade options are
- 
- * tipsy: https://github.com/CreativeDream/jquery.tipsy
- * react tooltip: https://react-tooltip.com/docs/getting-started
- * Material UI library: https://mui.com/material-ui/react-tooltip/
-
-Because react and d3 use different paradigms it makes integrating premade libraries somewhat difficult. Instead, we provide some premade code intended to make tooltip calls easier: 
-
-~~~text
-class ToolTip {
-  static moveTTip(tTip, tipX, tipY){
-    var tipBBox = tTip.node().getBoundingClientRect();
-    while(tipBBox.width + tipX > window.innerWidth){
-        tipX = tipX - 10 ;
-    }
-    while(tipBBox.height + tipY > window.innerHeight){
-        tipY = tipY - 10 ;
-    }
-    tTip.style('left', tipX + 'px')
-        .style('top', tipY + 'px')
-        .style('visibility', 'visible')
-        .style('z-index', 1000);
-  }
-
-  static moveTTipEvent(tTip, event){
-      var tipX = event.pageX + 30;
-      var tipY = event.pageY -20;
-      this.moveTTip(tTip,tipX,tipY);
-  }
-
-
-  static hideTTip(tTip){
-      tTip.style('visibility', 'hidden')
-  }
-
-  static addTTipCanvas(tTip, className, width, height){
-      tTip.selectAll('svg').selectAll('.'+className).remove();
-      let canvas = tTip.append('svg').attr('class',className)
-          .attr('height',height).attr('width',width)
-          .style('background','white');
-      return canvas
-  }
-}
-~~~
-
-This includes premade calls designed to go inside javascript event calls. We also need a div selection with certain css properties to make the position work. This code has been in App.css.
-
-~~~text
-.tooltip {	
-  position: absolute;
-  z-index: 10;
-  opacity: 1!important;			
-  text-align: center;			
-  width: auto;		
-  max-width: 50vw;			
-  height: auto;					
-  padding: 10px;				
-  font: 12px sans-serif;		
-  background: rgb(172, 173, 173);	
-  border: 0px;		
-  border-radius: 8px;			
-  pointer-events: none;	
-  font-size: .7em!important;		
-}
-~~~
-
-This styling can be altered, but the important part is "position: absolute".
-
-Our example code for a D3 component already gives you the selection for a div with the tooltip class with the name "tTip".
-
-For example, if we have code to draw a series of circles, we can add a tooltip call as such:
-
-~~~text
-let tTip = d3.select('.tooltip')//we need a selection for the tooltip item 
-svg.selectAll('circle')
-    .data(props.data).enter()
-    .append('circle')
-    .attr('cx',getX)
-    .attr('cy',getY)
-    .attr('r',getRadius)
-    .on('mouseover',(e,d)=>{
-        //e is the "event" for javascript
-        //d is the data item associated with props.data
-
-        //get the text to put in to the tooltip
-        let string = getToolTipText(d);
-        tTip.html(string);
-        //move 
-        ToolTip.moveTTipEvent(tTip,e);
-    }).on('mousemove',(e)=>{
-        //moves the tooltip relative to your mouse
-        ToolTip.moveTTipEvent(tTip,e);
-    }).on('mouseout',(e,d)=>{
-        //hide the tooltip once the mouse stops hovering over the circle
-        ToolTip.hideTTip(tTip);
-    });
-~~~
-
-This can be altered if you want different tooltip behaviour, such as moving the tooltip to a fixed location rather than relative to the mouse using ToolTip.moveTTip.
-
-Also, our example code passes the ToolTip class as a prop, so in the D3Component example code, you would use 
-
-> props.ToolTip.moveTTip...
-
-etc
-
-#### Experimenting with Brushing and Linking in D3 and react
-
-This is a guide for anyone that wants to experiment with linking interactions between multiple variables.
-These guidelines are similar to how we deal with interactivity and state changes in general in react. Thus, we can do similar behaviour to do things like adding filters elsewhere in the app: https://react.dev/learn/reacting-to-input-with-state
-
-By default, the easiest way to deal with d3 is to just remove everything and then redraw it whenever we update the data, which will likely work for all our data
-
-~~~text
-useEffect(()=>{
-        if(svg !== undefined & props.data !== undefined){
-            svg.selectAll().remove()
-            svg.selectAll('circle').data(props.data)
-                .enter().append('circle')
-                ...
-        }
-    },[svg,props.data]);
-~~~
-
-However, if we want to only select certain features to update according to the  state of the app (such as with brushing), there are a few steps we need to do.
-
-First, we want a state feature to track what is being tracked in App.js to link across different views:
-
-~~~text
-const [brushState,setBrushState] = useState();
-~~~
-
-In the example code brushedState is refering to the actual name of the US State, and not a generic "state" object.
-
-We then pass these features into the children components as update the "brushedState" when someone mouses over an encoding for a state in one of the components
-
-in App.js:
-
-~~~text
-return ( 
+- **SVG Files**: Generated in `generated_svgs/` directory
+- **Similarity Data**: Saved as `similarities.json` with format:
+  ```json
+  {
+    "CAR-0000058": [
+      {"compound": "CAR-0000059", "similarity": 0.85},
+      ...
+    ],
     ...
-    <Whitehat
-        ...
-        brushedState={brushedState}
-        setBrushedState={setBrushedState}
-        ...
-    />
-    ...
-)
-~~~
+  }
+  ```
 
-Inside Whitehat/Blackhat
-~~~text
-let mapGroup = svg.append('g').attr('class','mapbox');
-mapGroup.selectAll('path').filter('.state')
-    .data(props.map.features).enter()
-    .append('path').attr('class','state')
-    //etc...
-    .on('mouseover',(e,d)=>{
-        let state = cleanString(d.properties.NAME);
-        //this updates the brushed state
-        if(props.brushedState !== state){
-            props.setBrushedState(state);
-        }
-        //tooltip code...
-    }).on('mouseout',(e,d)=>{
-        //set props.brushedState to undefined when we stop mousing over something
-        props.setBrushedState();
-        //tooltip code...
-    });
-~~~
+#### Integration
 
-We then add in hooks into Whitehat/Blackhat (useEffect or useMemo both work) and pass props.brushedState so it updates when we call props.setBrushedState. In the example code, the key is that brushedState is the same format as the ID attribute we attached to each path, so we can select it using d3/jquery style selectors:
+The generated SVGs can be copied to `client/public/svgs/` for use in the frontend application. The similarity data can be used to update `client/public/similarities.json`.
 
-~~~text
-useMemo(()=>{
-    //mapgroupselection is the d3 selector for all the paths in the map
-    //which are given an id based on the state name
+-----
 
-    //check that the map is already drawn
-    if(mapGroupSelection !== undefined){
-        //check if we are currently brushing over something
-        const isBrushed = props.brushedState !== undefined;
-        //lower opacity if there is something brushed
-        mapGroupSelection.selectAll('.state')
-            .attr('opacity',isBrushed? .4:.8)
-            .attr('strokeWidth',isBrushed? 1:2);
-        //make the brushed path higher opacity
-        if(isBrushed){
-            mapGroupSelection.select('#'+props.brushedState)
-                .attr('opacity',1)
-                .attr('strokeWidth',3);
-        }
-    }
-},[mapGroupSelection,props.brushedState]);
-~~~
+## Usage Guide
 
-In order to add "linking" between views, we simply do something similar in the Black/WhitehatStats views. By default, the example code passes the "brushedState" value to the linked WhiteHatStats view, but doesn't do anything with it. We have to options:
+### Selecting Compounds
 
-* Make a seperate hook that updates certain features, as we do in the map visualization
-* Pass props.brushedState to the main view, and re-draw the graph depending on the linked view
+- **Click** on any compound in the Scatter Plot, Parallel Coordinates Plot, or Selection Panel to select it
+- Selected compounds are highlighted in **orange** across all views
+- Use the **Selection Panel** to browse and select compounds by name or properties
 
-To do the latter, we  need to pass the state to the main loop:
+### Changing Scatter Plot Dimensions
 
-~~~text
-useEffect(()=>{
-        //wait until the data loads
-        if(svg === undefined | props.data === undefined){ return }
+Use the dropdown in the **Selection Panel** to choose which two properties to plot on the X and Y axes. Available combinations include:
+- Weight vs Log P, Log D, pKa, TPSA, or Potency
+- Log P vs Log D, pKa, TPSA, or Potency
+- Log D vs pKa, TPSA, or Potency
+- pKa vs TPSA or Potency
+- TPSA vs Potency
 
-        //aggregate gun deaths by state
-        const data = props.data.states;
-        const brushedState = props.brushedState 
+### Filtering in Parallel Coordinates
 
-        svg.selectAll().remove()
-        //code here that draws the conditional graph
-    },[props.data,svg,props.brushedState]);
-~~~
+- **Drag** vertically on any axis in the Parallel Coordinates Plot to create a brush filter
+- Compounds outside the selected range are faded out
+- Multiple filters can be active simultaneously
+- **Click** outside the brush area to clear a filter
 
-#### Adding Custom Glyphs in Place of premade shapes
+### Exploring Structural Similarity
 
-There are certains cases where you might want to make a custom shape in d3. The way to do this is to use SVG paths. First, we need to define a function to draw a shape we want using path syntax: https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths
+- The **Heatmap** shows pairwise structural similarities (Tanimoto similarity from Morgan fingerprints)
+- **Click** the "Expand" button to view the full-size heatmap
+- **Click** any cell in the expanded heatmap to see detailed comparison of the two compounds
+- The side panel shows molecular structures, properties, and similarity score
 
-For example, we can draw a diamond by defining the points around the (0,0) origin follows:
+### Comparison Mode
 
-~~~text
-function drawDiamond(dummyData){
-    return 'M 0,1 -1,0 0,-1 1,0 z'
-}
-~~~
+- Switch to **"Compare"** mode in the Selection Panel
+- Select up to 2 compounds to compare side-by-side in the Comparison Panel
+- The Comparison Panel displays large molecular structure views for easy visual comparison
 
-This is useful since we can extend the function to draw different things based on the data
+-----
 
-we then pass this function to a d3 path call like we would with any other d3 shape. Instead of using size and position attributes, we use transforms. For example, if we define functions getScale, getX and getY to calculate the size and position of the datapoint, we can write:
+## Credits
 
-~~~text
-svg.selectAll('path').filter('.exampleDiamond')
-    .data(props.data).enter()
-    .append('path').attr('class','exampleDiamond')
-    .attr('d',drawDiamond)
-    .attr('transform',d=> 'scale(' + getScale(d) + ')' + 'translate(' + getX(d) + ',' + getY(d) + ')')
-~~~
-
-For example, if we wanted to draw city glyphs in a way that uses different colors to represent the portion of victims that are either male or female, we can change the code to draw two arcs of different sizes for each sub-population:
-
-~~~text
-function drawGlyph(d,male=true){
-    let ratio = (d.male_count/d.count);
-    let y = (1 - 2*ratio);
-    y = Math.sign(y)*(y**2);
-    let theta = Math.asin(y);
-    let x = Math.cos(theta);
-    if(male){
-        let arc = 'M ' + x + ',' + y + ' '
-            + 'A 1 1 0 1 1 ' + (-x) + y + 'z'
-        return arc
-    }
-    else{
-        let arc = 'M ' + x + ',' + y + ' '
-            + 'A 1 1 0 0 0 ' + (-x) + y + 'z'
-        return arc
-    }
-};
-
-//draw the glyphs for the population
-//one for male and female populations so we can use different colors
-let b = mapGroup.selectAll('.bubbles').data(cityData);
-function makeArc(male){
-    const className = male? 'maleArcs': 'femaleArcs';
-    b.enter()
-    .append('path')
-    .attr('d',d=>drawGlyph(d,male))
-    .attr('class','bubbles '+className)
-    .attr('id',d=>d.key)
-    .attr('transform',getCityTransform)
-    .attr('stroke-width',d=>.01/cityScale(d.male_count/d.count))
-    .attr('stroke','black')
-    .attr('fill',male?'navy':'magenta');
-}
-
-//male bubbles
-makeArc(true);
-//female bubbles
-makeArc(false);
-~~~
+This project was developed for CS 529: Visual Data Science at the University of Illinois Chicago. Support code was written by Andrew Wentzel, Electronic Visualization Laboratory (EVL) at UIC, and adapted for this repository.

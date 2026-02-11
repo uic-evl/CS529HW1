@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "AMACSAR",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "test",
+    "extract_compounds_data_from_excel": "node extract_compounds_data_from_excel/extract_compounds_data_from_excel.js",
+    "get_all_compound_svgs": "npx playwright test get_all_compound_svgs/get_all_compound_svgs.spec.js",
+    "extract_all_compound_svgs_from_text": "node extract_all_compound_svgs_from_text/extract_all_compound_svgs_from_text.js",
+    "generate_similarities": "node generate_similarities/generate_similarities.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pleaselukau/SAR-Visualization.git"
+  },
+  "author": "Hrushikesh Joshi, Please Lukau, Harsh Shelke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pleaselukau/SAR-Visualization/issues"
+  },
+  "homepage": "https://github.com/pleaselukau/SAR-Visualization#readme",
+  "dependencies": {
+    "@rdkit/rdkit": "^2025.3.4-1.0.0",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1"
+  }
+}

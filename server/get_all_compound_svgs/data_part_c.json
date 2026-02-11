@@ -1,0 +1,436 @@
+[
+  {
+    "ID": 1,
+    "name": "CAR-0000058-PART-C"
+  },
+  {
+    "ID": 2,
+    "name": "CAR-0000073-PART-C"
+  },
+  {
+    "ID": 3,
+    "name": "CAR-0000146-PART-C"
+  },
+  {
+    "ID": 4,
+    "name": "CAR-0000230-PART-C"
+  },
+  {
+    "ID": 5,
+    "name": "CAR-0000057-PART-C"
+  },
+  {
+    "ID": 6,
+    "name": "CAR-0000075-PART-C",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 7,
+    "name": "CAR-0000177-PART-C"
+  },
+  {
+    "ID": 8,
+    "name": "CAR-0000148-PART-C"
+  },
+  {
+    "ID": 9,
+    "name": "CAR-0000043-PART-C"
+  },
+  {
+    "ID": 10,
+    "name": "CAR-0000074-PART-C"
+  },
+  {
+    "ID": 11,
+    "name": "CAR-0000089-PART-C"
+  },
+  {
+    "ID": 12,
+    "name": "CAR-0000066-PART-C"
+  },
+  {
+    "ID": 13,
+    "name": "CAR-0000090-PART-C"
+  },
+  {
+    "ID": 14,
+    "name": "CAR-0000008-PART-C",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 15,
+    "name": "CAR-0000059-PART-C"
+  },
+  {
+    "ID": 16,
+    "name": "CAR-0000077-PART-C"
+  },
+  {
+    "ID": 17,
+    "name": "CAR-0000060-PART-C"
+  },
+  {
+    "ID": 18,
+    "name": "CAR-0000087-PART-C"
+  },
+  {
+    "ID": 19,
+    "name": "CAR-0000055-PART-C"
+  },
+  {
+    "ID": 20,
+    "name": "CAR-0000061-PART-C"
+  },
+  {
+    "ID": 21,
+    "name": "CAR-0000036-PART-C",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 22,
+    "name": "CAR-0000046-PART-C"
+  },
+  {
+    "ID": 23,
+    "name": "CAR-0000038-PART-C"
+  },
+  {
+    "ID": 24,
+    "name": "CAR-0000147-PART-C"
+  },
+  {
+    "ID": 25,
+    "name": "CAR-0000447-PART-C"
+  },
+  {
+    "ID": 26,
+    "name": "CAR-0000088-PART-C"
+  },
+  {
+    "ID": 27,
+    "name": "CAR-0000083-PART-C"
+  },
+  {
+    "ID": 28,
+    "name": "CAR-0000079-PART-C"
+  },
+  {
+    "ID": 29,
+    "name": "CAR-0000187-PART-C"
+  },
+  {
+    "ID": 30,
+    "name": "CAR-0000045-PART-C"
+  },
+  {
+    "ID": 31,
+    "name": "CAR-0000109-PART-C"
+  },
+  {
+    "ID": 32,
+    "name": "CAR-0000084-PART-C"
+  },
+  {
+    "ID": 33,
+    "name": "CAR-0000015-PART-C",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 34,
+    "name": "CAR-0000262-PART-C"
+  },
+  {
+    "ID": 35,
+    "name": "CAR-0000042-PART-C"
+  },
+  {
+    "ID": 36,
+    "name": "CAR-0000039-PART-C"
+  },
+  {
+    "ID": 37,
+    "name": "CAR-0000078-PART-C"
+  },
+  {
+    "ID": 38,
+    "name": "CAR-0000018-PART-C",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 39,
+    "name": "CAR-0000056-PART-C"
+  },
+  {
+    "ID": 40,
+    "name": "CAR-0000069-PART-C"
+  },
+  {
+    "ID": 41,
+    "name": "CAR-0000076-PART-C"
+  },
+  {
+    "ID": 42,
+    "name": "CAR-0000034-PART-C",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 43,
+    "name": "CAR-0000023-PART-C",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 44,
+    "name": "CAR-0000009-PART-C",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 45,
+    "name": "CAR-0000044-PART-C"
+  },
+  {
+    "ID": 46,
+    "name": "CAR-0000265-PART-C"
+  },
+  {
+    "ID": 47,
+    "name": "CAR-0000053-PART-C"
+  },
+  {
+    "ID": 48,
+    "name": "CAR-0000099-PART-C"
+  },
+  {
+    "ID": 49,
+    "name": "CAR-0000081-PART-C",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 50,
+    "name": "CAR-0000085-PART-C"
+  },
+  {
+    "ID": 51,
+    "name": "CAR-0000098-PART-C"
+  },
+  {
+    "ID": 52,
+    "name": "CAR-0000070-PART-C"
+  },
+  {
+    "ID": 53,
+    "name": "CAR-0000068-PART-C"
+  },
+  {
+    "ID": 54,
+    "name": "CAR-0000071-PART-C"
+  },
+  {
+    "ID": 55,
+    "name": "CAR-0000049-PART-C"
+  },
+  {
+    "ID": 56,
+    "name": "CAR-0000263-PART-C"
+  },
+  {
+    "ID": 57,
+    "name": "CAR-0000080-PART-C"
+  },
+  {
+    "ID": 58,
+    "name": "CAR-0000054-PART-C"
+  },
+  {
+    "ID": 59,
+    "name": "CAR-0000067-PART-C"
+  },
+  {
+    "ID": 60,
+    "name": "CAR-0000218-PART-C"
+  },
+  {
+    "ID": 61,
+    "name": "CAR-0000086-PART-C"
+  },
+  {
+    "ID": 62,
+    "name": "CAR-0000260-PART-C"
+  },
+  {
+    "ID": 63,
+    "name": "CAR-0000264-PART-C"
+  },
+  {
+    "ID": 64,
+    "name": "CAR-0000016-PART-C",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 65,
+    "name": "CAR-0000101-PART-C"
+  },
+  {
+    "ID": 66,
+    "name": "CAR-0000214-PART-C"
+  },
+  {
+    "ID": 67,
+    "name": "CAR-0000261-PART-C"
+  },
+  {
+    "ID": 68,
+    "name": "CAR-0000030-PART-C"
+  },
+  {
+    "ID": 69,
+    "name": "CAR-0000100-PART-C"
+  },
+  {
+    "ID": 70,
+    "name": "CAR-0000097-PART-C"
+  },
+  {
+    "ID": 71,
+    "name": "CAR-0000248-PART-C"
+  },
+  {
+    "ID": 72,
+    "name": "CAR-0000035-PART-C",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 73,
+    "name": "CAR-0000040-PART-C",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 74,
+    "name": "CAR-0000041-PART-C",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 75,
+    "name": "CAR-0000227-PART-C"
+  },
+  {
+    "ID": 76,
+    "name": "CAR-0000199-PART-C"
+  },
+  {
+    "ID": 77,
+    "name": "CAR-0000249-PART-C"
+  },
+  {
+    "ID": 78,
+    "name": "CAR-0000250-PART-C"
+  },
+  {
+    "ID": 79,
+    "name": "CAR-0000200-PART-C"
+  },
+  {
+    "ID": 80,
+    "name": "CAR-0000215-PART-C"
+  },
+  {
+    "ID": 81,
+    "name": "CAR-0000256-PART-C"
+  },
+  {
+    "ID": 82,
+    "name": "CAR-0000253-PART-C"
+  },
+  {
+    "ID": 83,
+    "name": "CAR-0000201-PART-C"
+  },
+  {
+    "ID": 84,
+    "name": "CAR-0000255-PART-C"
+  },
+  {
+    "ID": 85,
+    "name": "CAR-0000258-PART-C"
+  },
+  {
+    "ID": 86,
+    "name": "CAR-0000259-PART-C"
+  },
+  {
+    "ID": 87,
+    "name": "CAR-0000257-PART-C"
+  },
+  {
+    "ID": 88,
+    "name": "CAR-0000051-PART-C"
+  },
+  {
+    "ID": 89,
+    "name": "CAR-0000252-PART-C"
+  },
+  {
+    "ID": 90,
+    "name": "CAR-0000052-PART-C"
+  },
+  {
+    "ID": 91,
+    "name": "CAR-0000254-PART-C"
+  },
+  {
+    "ID": 92,
+    "name": "CAR-0000026-PART-C"
+  },
+  {
+    "ID": 93,
+    "name": "CAR-0000027-PART-C"
+  },
+  {
+    "ID": 94,
+    "name": "CAR-0000050-PART-C"
+  },
+  {
+    "ID": 95,
+    "name": "CAR-0000120-PART-C"
+  },
+  {
+    "ID": 96,
+    "name": "CAR-0000047-PART-C"
+  },
+  {
+    "ID": 97,
+    "name": "CAR-0000020-PART-C"
+  },
+  {
+    "ID": 98,
+    "name": "CAR-0000037-PART-C"
+  },
+  {
+    "ID": 99,
+    "name": "CAR-0000082-PART-C",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 100,
+    "name": "CAR-0000048-PART-C"
+  },
+  {
+    "ID": 101,
+    "name": "CAR-0000266-PART-C"
+  },
+  {
+    "ID": 102,
+    "name": "CAR-0000062-PART-C"
+  },
+  {
+    "ID": 103,
+    "name": "CAR-0000063-PART-C"
+  },
+  {
+    "ID": 104,
+    "name": "CAR-0000064-PART-C"
+  },
+  {
+    "ID": 105,
+    "name": "CAR-0000065-PART-C"
+  }
+]

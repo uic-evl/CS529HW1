@@ -1,0 +1,7 @@
+# Core cheminformatics library
+rdkit>=2024.09.1
+
+# Optional: pin versions for reproducibility (recommended)
+# rdkit==2024.09.1
+
+# No other packages needed — json, os, etc. are built-in

@@ -1,0 +1,46 @@
+<svg id="function random() { [native code] }"
+	xmlns="http://www.w3.org/2000/svg" version="1.1" width="200px" height="150px" viewBox="0 0 200 150">\n\t
+	<style> #function random() { [native code] } {pointer-events:none; }  #function random() { [native code] } .event  { pointer-events:all;}  </style>\n\t
+
+    <!-- Benzene ring -->
+	<line x1="100" y1="51" x2="120" y2="63" style="stroke:rgb(0,0,0);stroke-width:1"/>\n\t
+	<line x1="100" y1="55" x2="116" y2="64" style="stroke:rgb(0,0,0);stroke-width:1"/>\n\t
+	<line x1="79" y1="87" x2="79" y2="62" style="stroke:rgb(0,0,0);stroke-width:1"/>\n\t
+    <line x1="120" y1="87" x2="120" y2="63" style="stroke:rgb(0,0,0);stroke-width:1"/>\n\t
+    <line x1="99" y1="99" x2="79" y2="87" style="stroke:rgb(0,0,0);stroke-width:1"/>\n\t
+    <line x1="79" y1="62" x2="100" y2="51" style="stroke:rgb(0,0,0);stroke-width:1"/>\n\t
+	<line x1="82" y1="84" x2="82" y2="65" style="stroke:rgb(0,0,0);stroke-width:1"/>\n\t
+	<line x1="120" y1="87" x2="99" y2="99" style="stroke:rgb(0,0,0);stroke-width:1"/>\n\t
+	<line x1="116" y1="85" x2="100" y2="94" style="stroke:rgb(0,0,0);stroke-width:1"/>\n\t
+	
+    <!-- CH3 Branches -->
+    <!-- North  -->
+    <!-- <line x1="100" y1="27" x2="100" y2="51" style="stroke:rgb(0,0,0);stroke-width:1"/> -->
+    <text x="93" y="31" font-family=" Helvetica" font-weight="900" font-size="14" fill="rgb(31,240,31)">Cl</text>\n\t
+    <line x1="100" y1="34" x2="100" y2="51" style="stroke:rgb(0,0,0);stroke-width:1"/>\n\t
+
+    <!-- North-East  -->
+    <!-- <line x1="120" y1="63" x2="141" y2="51" style="stroke:rgb(0,0,0);stroke-width:1"/> -->
+    <!-- <text x="134" y="55" font-family=" Helvetica" font-weight="900" font-size="14" fill="rgb(31,240,31)">Cl</text>\n\t -->
+    <!-- <line x1="120" y1="63" x2="133" y2="55" style="stroke:rgb(0,0,0);stroke-width:1"/>\n\t -->
+
+    <!-- South-East  -->
+	<!-- <line x1="141" y1="99" x2="120" y2="87" style="stroke:rgb(0,0,0);stroke-width:1"/>\n\t -->
+    <!-- <text x="134" y="103" font-family=" Helvetica" font-weight="900" font-size="14" fill="rgb(31,240,31)">Cl</text>\n\t -->
+    <!-- <line x1="133" y1="94" x2="120" y2="87" style="stroke:rgb(0,0,0);stroke-width:1"/>\n\t -->
+    
+    <!-- South -->
+    <line x1="99" y1="123" x2="99" y2="99" style="stroke:rgb(0,0,0);stroke-width:1"/>
+    <!-- <text x="93" y="127" font-family=" Helvetica" font-weight="900" font-size="14" fill="rgb(31,240,31)">Cl</text>\n\t -->
+    <!-- <line x1="99" y1="116" x2="99" y2="99" style="stroke:rgb(0,0,0);stroke-width:1"/>\n\t -->
+    
+    <!-- South-West -->
+    <!-- <line x1="58" y1="99" x2="79" y2="87" style="stroke:rgb(0,0,0);stroke-width:1"/> -->
+    <!-- <text x="51" y="103" font-family=" Helvetica" font-weight="900" font-size="14" fill="rgb(31,240,31)">Cl</text>\n\t -->
+    <!-- <line x1="66" y1="94" x2="79" y2="87" style="stroke:rgb(0,0,0);stroke-width:1"/>\n\t -->
+    
+    <!-- North-West -->
+    <!-- <line x1="58" y1="50" x2="79" y2="62" style="stroke:rgb(0,0,0);stroke-width:1"/> -->
+    <!-- <text x="51" y="54" font-family=" Helvetica" font-weight="900" font-size="14" fill="rgb(31,240,31)">Cl</text>\n\t -->
+    <!-- <line x1="66" y1="55" x2="79" y2="62" style="stroke:rgb(0,0,0);stroke-width:1"/>\n\t -->
+</svg>

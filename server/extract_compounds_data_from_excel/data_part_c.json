@@ -1,0 +1,72 @@
+[
+  {
+    "ID": 6,
+    "name": "CAR-0000075",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 14,
+    "name": "CAR-0000008",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 21,
+    "name": "CAR-0000036",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 33,
+    "name": "CAR-0000015",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 38,
+    "name": "CAR-0000018",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 42,
+    "name": "CAR-0000034",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 43,
+    "name": "CAR-0000023",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 44,
+    "name": "CAR-0000009",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 49,
+    "name": "CAR-0000081",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 64,
+    "name": "CAR-0000016",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 72,
+    "name": "CAR-0000035",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 73,
+    "name": "CAR-0000040",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 74,
+    "name": "CAR-0000041",
+    "part_c_smiles": "CC"
+  },
+  {
+    "ID": 99,
+    "name": "CAR-0000082",
+    "part_c_smiles": "CC"
+  }
+]
